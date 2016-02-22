@@ -1,0 +1,38 @@
+header {
+	margin: 0px;
+	height: 100%;
+	background: #2C3E50;
+	width: 200px;
+	 border-top-right-radius: 0px;
+	 border-bottom-right-radius: 0px;
+}
+
+header > h3 {
+	color: #3498DB;
+}
+
+section {
+    width: 800px;
+    padding-bottom: 50px;
+    padding-left: 360px;
+    float: left;
+}
+
+body {
+	padding: 0px;
+}
+
+header li, header li:hover {
+    margin-bottom: 0px;
+    line-height: 0em;
+    background: none;
+    border-radius: 0px;
+    border: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+header a:hover {
+	color: #E74C3C;
+	text-decoration: none;
+}
