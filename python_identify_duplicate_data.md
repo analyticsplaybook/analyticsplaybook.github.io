@@ -6,7 +6,7 @@ __Actions__: Our sample dataset contains every order transaction for 2015. The d
 
 We need to identify orders that contain duplicated order line items, those duplicates would have a SKU that appears in more than one row of data, for a given order_id, as shown below.
 
-![watch](/images/python_duplicate_order_example.png)
+![Duplicate Data Example](/images/python_duplicate_order_example.png)
 
 
 Notes about the data:
@@ -18,7 +18,7 @@ Notes about the data:
 
 __Explanation (resolution)__:
 
-Let's begin begin by importing the pandas library. pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for Python.
+Let\'s begin begin by importing the pandas library. pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for Python.
 
 ```python
 In [1]:
@@ -37,7 +37,7 @@ xlsx = pd.ExcelFile(path)
 df = pd.read_excel(xlsx, 'Sheet1')
 ```
 
-We have our data in a DataFrame, which resembles the structure shown in the example sales data above, now we need a way to identify all of the duplicate rows in our dataset. To accomplish this we are going to add a new column to our DataFrame, named is\_duplicated, that will hold a boolean value identifying if the row is a duplicate or not. To populate the boolean value for each row in the dataset, we are going to use a very powerful function called ?duplicated? which we will feed the columns we want to evaluate for duplication. In this case, we will mark a row as a duplicate if we find more than one row that has the same order_id and order_item_sku.
+We have our data in a DataFrame, which resembles the structure shown in the example sales data above, now we need a way to identify all of the duplicate rows in our dataset. To accomplish this we are going to add a new column to our DataFrame, named is\_duplicated, that will hold a boolean value identifying if the row is a duplicate or not. To populate the boolean value for each row in the dataset, we are going to use a very powerful function called \'duplicated\' which we will feed the columns we want to evaluate for duplication. In this case, we will mark a row as a duplicate if we find more than one row that has the same order\_id and order\_item\_sku.
 
 ```python
 In [3]:
@@ -45,7 +45,7 @@ In [3]:
 df['is_duplicated'] = df.duplicated(['order_id', 'order_item_cd'])
 ```
 
-Before we go any further, let?s get a sense of how big of an issue we have here. We are going to sum up all of the rows that were marked as a duplicate. This will give us the number of duplicate line items in the dataset.
+Before we go any further, let\'s get a sense of how big of an issue we have here. We are going to sum up all of the rows that were marked as a duplicate. This will give us the number of duplicate line items in the dataset.
 
 ```python
 In [4]:
@@ -55,9 +55,9 @@ df['is_duplicated'].sum()
 Out[4]:
 13372
 ```
-Ok, so this isn?t just a few records here and there that are a problem, our dataset contains 13,372 line items that have been marked as being duplicates. Before we look to do any cleanup, let?s further understand the impact of this dirty data. Let?s find out how many duplicate units are in our dataset, we would expect at least 13,372 units but there is a high likelihood that customers often purchase more than one unit of any given SKU.
+Ok, so this isn\'t just a few records here and there that are a problem, our dataset contains 13,372 line items that have been marked as being duplicates. Before we look to do any cleanup, let\'s further understand the impact of this dirty data. Let\'s find out how many duplicate units are in our dataset, we would expect at least 13,372 units but there is a high likelihood that customers often purchase more than one unit of any given SKU.
 
-Like we did in the previous step, let?s sum up the number of items purchased that were marked as being duplicates in our dataset.
+Like we did in the previous step, let\'s sum up the number of items purchased that were marked as being duplicates in our dataset.
 
 ```python
 In [5]:
@@ -68,7 +68,7 @@ Out[5]:
 63234.0
 ```
 
-Let?s see what the impact to revenue is. In order to get the impacted revenue, we will add a new column to our DataFrame which will be the line item total for each row in the dataset. To get this value, we will multiple quantity purchased by the item cost, for each row.
+Let\'s see what the impact to revenue is. In order to get the impacted revenue, we will add a new column to our DataFrame which will be the line item total for each row in the dataset. To get this value, we will multiple quantity purchased by the item cost, for each row.
 
 Once we have the total for each line item, we can again sum all of the duplicated line items, this time using our revenue value.
 
@@ -85,7 +85,7 @@ Out[6]:
 4736155.8047346813
 ```
 
-Let?s clean the duplicate data up.
+Let\'s clean the duplicate data up.
 
 ```python
 In [7]:
@@ -93,7 +93,7 @@ In [7]:
 df_nodup = df.loc[df['is_duplicated'] == False]
 ```
 
-It?s always a good practice to constantly check our work. Let?s do a quick sanity check to make sure we have gotten rid of the problematic duplicate data.
+It\'s always a good practice to constantly check our work. Let\'s do a quick sanity check to make sure we have gotten rid of the problematic duplicate data.
 
 ```python
 In [8]:
