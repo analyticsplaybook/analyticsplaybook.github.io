@@ -14,6 +14,7 @@ header {
 	background: #2C3E50;
 	height: 100%;
 	width: 20%;
+  max-width: 300px;
 	 border-top-right-radius: 0px;
 	 border-bottom-right-radius: 0px;
   overflow-y: auto;

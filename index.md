@@ -24,13 +24,15 @@ The aim of this site is to provide simple, "one-pager" style articles following 
 
   * State a bite-sized business problem/question
   * Show how you solved the problem/question
-  * Show what the solution looks like (with business impact if possible)
+  * EXPLAIN why the solution works (with business impact if possible)
 
 It's clearly not always feasible to use actual data, but where possible, using a generated or anonymized dataset will always help with understanding or will be highly valued by the community.
 
-While authors should feel free to link back to their own sites as necessary (such as for expanding upon a topic beyond the limited "one-page" style of this site), this is not intended to be a link farm. Submitting just links, or half-written teasers to link to other sites will be **deleted/rejected**. Otherwise, there are no restrictions on who may post, as long as it is useful to the community.
+While authors should feel free to link back to their own sites as necessary (such as for expanding upon a topic beyond the limited "one-page" style of this site), this is not intended to be a link farm. Submitting just links, or half-written teasers to link to other sites will be **deleted/rejected**. Otherwise, there are no restrictions on who may post, as long as it is useful to the community (beginner through expert-level).
 
 Submissions will be made using GitHub, using [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/#syntax). By using GitHub, this project can truly be a community affair; not only can anyone create a GitHub account for free, but articles will be able to be edited by anyone via pull request (subject to community discussion/approval).
+
+A [template](https://raw.githubusercontent.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/master/template.md) is provided for convenience. Markdown takes a little bit of getting used to, but ultimately it's a great plain-text format, while still allowing for rich display of content. A simple submission could just be to place a Markdown file in the main directory (where [index.md](https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/blob/master/index.md) resides), and editing the [sidebar.html](https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/blob/master/_layouts/minimal.html) file to include the link to your article under the proper heading.
 
 ## GitHub Resources
 
