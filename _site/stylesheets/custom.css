@@ -46,6 +46,7 @@ header li, header li:hover {
     border: 0px;
     -webkit-box-shadow: none;
     box-shadow: none;
+    width: 200px;
 }
 
 header a:hover {
