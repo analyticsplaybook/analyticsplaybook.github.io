@@ -1,10 +1,23 @@
+html, .wrapper, section{
+  height:100%;
+	width: 100%;
+}
+
+body {
+  height: 99.5%%;
+	width: 100%;
+}
+
+
 header {
 	margin: 0px;
-	height: 100%;
 	background: #2C3E50;
-	width: 200px;
+	height: 100%;
+	width: 20%;
 	 border-top-right-radius: 0px;
 	 border-bottom-right-radius: 0px;
+  overflow-y: auto;
+	position: relative;
 }
 
 header > h3 {
@@ -12,10 +25,12 @@ header > h3 {
 }
 
 section {
-    width: 800px;
-    padding-bottom: 50px;
-    padding-left: 360px;
-    float: left;
+    width: 60%;
+		height: 100%;
+		padding-right: 10%;
+		max-width: 1000px;
+    float: right;
+		overflow: auto;
 }
 
 body {
@@ -35,4 +50,12 @@ header li, header li:hover {
 header a:hover {
 	color: #E74C3C;
 	text-decoration: none;
+}
+
+h4 {
+    font-family: Arvo, Monaco, serif;
+}
+
+blockquote {
+		background-color: ghostwhite;
 }
