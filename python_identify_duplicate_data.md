@@ -5,6 +5,7 @@ title: Digital Analytics Cookbook
 
 ---
 # Identifying Duplicate Sales Data using Python
+Author: Jason Thompson
 
 __Problem__: More often than not, analysts are given data that is unstructured and dirty. In this example, an analyst has been provided a 300MB Excel Workbook containing sales transactions, however it has been noted that several of the transactions have been duplicated in the data. Before doing any analysis of the sales data, the duplicate data needs to be cleaned up.
 
