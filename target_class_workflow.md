@@ -42,7 +42,7 @@ Now that we have an approved campaign, we can build links that we can distribute
 Control: http://www.site.com/?campaign=shp&v=control
 Homepage CTA: http://www.site.com/?campaign=shp&v=cta
 
-Once testing has be completed and the business has signed off on the test, we can promote our test to production a.k.a "make it live." To do this, we will make a copy of the QA campaign (but leave the campaign active) to create a production ready version.
+Once testing has been completed and the business has signed off on the test, we can promote our test to production a.k.a "make it live." To do this, we will make a copy of the QA campaign (but leave the campaign active) to create a production ready version.
 
 ![Adobe Target - Target Location](/images/target_production_campaign.png)
 
