@@ -65,6 +65,7 @@ blockquote {
 header {
 	background: #2C3E50;
     margin: 0px;
+	min-width: 200px;
 }
 header > h3 {
 	color: #3498DB;
