@@ -7,9 +7,9 @@ title: How To Submit An Article
 # How To Submit An Article
 
 ### Option 1: GitHub
-Submissions will be accepted via GitHub, using [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/#syntax). If you are already familiar with GitHub, this option will provide direct access to the [Digital Analytics Cookbook](http://digitalanalyticscookbook.org) to not only submit articles but to submit suggested changes to the overall site content and structure.
+Submissions will be accepted via GitHub, using [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/#syntax). If you are already familiar with GitHub, this option will provide direct access to the [Analytics Playbook](http://analyticsplaybook.org) to not only submit articles but to submit suggested changes to the overall site content and structure.
 
-The first thing you will want to do is Fork a copy of the [Digital Analytics Cookbook](https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io) to create a copy of the repository in your own GitHub account.
+The first thing you will want to do is Fork a copy of the [Analytics Playbook](https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io) to create a copy of the repository in your own GitHub account.
 
 ![GetHub Fork](/images/gethub_fork.png)
 
