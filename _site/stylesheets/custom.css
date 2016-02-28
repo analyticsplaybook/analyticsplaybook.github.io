@@ -66,6 +66,8 @@ header {
 	background: #2C3E50;
     margin: 0px;
 	min-width: 250px;
+	overflow-y: auto;
+	position: relative;
 }
 header > h3 {
 	color: #3498DB;
