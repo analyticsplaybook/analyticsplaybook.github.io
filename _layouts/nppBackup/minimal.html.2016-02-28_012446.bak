@@ -37,9 +37,7 @@
         <h3>Adobe Analytics</h3>
 
         <h3>Tag Management</h3>
-            <ul>
-                <li><a href="json_datalayer_w3c_based.html">JSON Data Layer: Basics and W3C norm</a></li>
-            </ul>
+
         <h3>API/Programmatic</h3>
             <ul>
 	            <li><a href="python_identify_duplicate_data.html">Python: Identify Duplicate Data</a></li>
