@@ -4,7 +4,7 @@ layout: minimal
 title: Digital Analytics Cookbook
 
 ---
-# JSON Data Layer based on W3C norm
+# Json Data Layer based on W3C norm
 
 __Problem__: Quote from W3C Customer Experience Digital Data Layer: "Collection and analysis of visitor behavioral and demographic data has become an integral part of web application design and website success, whether accessed through browsers on laptop, mobile, kiosk, tablet or another device. This data is central to site performance analysis, dynamically tailoring site content to visitor activity and interest and retargeting visitors based on their behaviors. 
 
