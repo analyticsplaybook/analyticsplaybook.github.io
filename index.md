@@ -1,11 +1,11 @@
 ---
 
 layout: minimal
-title: Analytics Playbook
+title: Analysis Playbook
 
 ---
 
-# Analytics Playbook Cookbook:<br>An Open Source Repository for Analytical Techniques
+# Analysis Playbook:<br>An Open Source Repository for Analytical Techniques
 
 > If you have knowledge, let others light their candles in it.
 > [- Margaret Fuller (1810 - 1850)](http://www.newyorker.com/magazine/2013/04/01/an-unfinished-woman)
