@@ -1,7 +1,7 @@
 ---
 
 layout: minimal
-title: Digital Analytics Cookbook
+title: Identifying Duplicate Sales Data using Python
 
 ---
 # Identifying Duplicate Sales Data using Python

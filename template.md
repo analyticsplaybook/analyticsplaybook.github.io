@@ -1,7 +1,7 @@
 ---
 
 layout: minimal
-title: Digital Analytics Cookbook
+title: <Put Topic Title Here>
 
 ---
 

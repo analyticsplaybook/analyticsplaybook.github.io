@@ -1,7 +1,7 @@
 ---
 
 layout: minimal
-title: Digital Analytics Cookbook
+title: JSON Data Layer based on W3C norm
 
 ---
 # JSON Data Layer based on W3C norm
