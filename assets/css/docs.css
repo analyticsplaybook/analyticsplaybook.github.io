@@ -36,6 +36,17 @@ body {
   font-family: 'ProximaNova-Regular', Helvetica, sans-serif;
 }
 
+.navbar .brand {
+    display: block;
+    float: left;
+    padding: 20px 20px 10px;
+    margin-left: -20px;
+    font-size: 40px;
+    font-weight: 200;
+    color: #fff;
+	text-shadow: none;
+}
+
 .navbar-inner {
   padding: 5px 0px;
   background-image: none;
