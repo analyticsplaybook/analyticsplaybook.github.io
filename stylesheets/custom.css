@@ -65,7 +65,7 @@ blockquote {
 header {
 	background: #2C3E50;
     margin: 0px;
-	min-width: 200px;
+	min-width: 250px;
 }
 header > h3 {
 	color: #3498DB;
@@ -104,4 +104,8 @@ header li, header li:hover {
 
 ul {
     margin-bottom: 0px;
+}
+
+section {
+    width: 600px;
 }
