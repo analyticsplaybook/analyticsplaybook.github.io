@@ -1,6 +1,6 @@
 ---
 
-layout: minimal
+layout: responsive
 title: Identifying Duplicate Sales Data using Python
 
 ---
@@ -13,7 +13,7 @@ __Actions__: Our sample dataset contains every order transaction for 2015. The d
 
 We need to identify orders that contain duplicated order line items, those duplicates would have a SKU that appears in more than one row of data, for a given order_id, as shown below.
 
-![Duplicate Data Example](/images/python_duplicate_order_example.png)
+![Duplicate Data Example](images/python_duplicate_order_example.png)
 
 
 Notes about the data:
