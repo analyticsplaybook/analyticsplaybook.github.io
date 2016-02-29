@@ -9,7 +9,7 @@ title: Introduction to AB Testing and P-Values
 
 Author: Matt Gershoff
 
-_A version of this post was originally published over at Conversion XL_
+_A version of this post was originally published over at [ConversionXL](http://conversionxl.com/pulling-back-curtain-p-values-learned-love-small-data/)_
 
 For all of the talk about how awesome (and big, don’t forget big) Big data is, one of the favorite tools in the conversion optimization toolkit, AB Testing, is decidedly small data. Optimization, winners and losers, Lean this that or the other thing, at the end of the day, A/B Testing is really just an application of sampling.
 
