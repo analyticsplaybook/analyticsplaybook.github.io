@@ -4,7 +4,7 @@ layout: responsive
 title: How To Submit An Article
 
 ---
-##Visualizing State Level Data With R and Statebins
+## Visualizing State Level Data With R and Statebins
 
 Author: Jowanza Joseph
 
