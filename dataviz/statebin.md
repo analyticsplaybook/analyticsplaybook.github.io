@@ -1,7 +1,7 @@
 ---
 
 layout: responsive
-title: How To Submit An Article
+title: Visualizing State Level Data With R and Statebins
 
 ---
 ## Visualizing State Level Data With R and Statebins
