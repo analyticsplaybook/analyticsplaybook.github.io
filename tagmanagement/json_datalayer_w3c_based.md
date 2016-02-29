@@ -1,6 +1,6 @@
 ---
 
-layout: minimal
+layout: responsive
 title: JSON Data Layer based on W3C norm
 
 ---

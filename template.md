@@ -1,6 +1,6 @@
 ---
 
-layout: minimal
+layout: responsive
 title: <Put Topic Title Here>
 
 ---

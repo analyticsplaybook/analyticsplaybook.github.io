@@ -1,0 +1,27 @@
+/*Header background color*/
+.navbar-inner {
+    background-color: rgba(52, 152, 219, 0.9);
+}
+
+/*Header link color*/
+.navbar .nav.pull-right a {
+    color: #2C3E50;
+}
+
+/*Sidebar headers*/
+#menu li.nav-header {
+    color: #2980B9;
+}
+
+/*Link color*/
+a {
+    color: #E74C3C;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2980B9;
+}
+
+body {
+    background-color: #fbfbfa;
+}
