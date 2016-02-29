@@ -1,6 +1,6 @@
 ---
 
-layout: minimal
+layout: responsive
 title: How To Submit An Article
 
 ---
