@@ -7,6 +7,7 @@ title: Introduction to AB Testing and P-Values
 
 # Introduction to AB Testing and P-Values
 
+Author: Matt Gershoff
 
 _A version of this post was originally published over at Conversion XL_
 
