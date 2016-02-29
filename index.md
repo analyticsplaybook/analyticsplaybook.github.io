@@ -42,4 +42,4 @@ Since not everyone has experience with GitHub, here are some useful links:
   * [GitHub GUI Clients](https://git-scm.com/downloads)
   * [Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
 
-If you would like to contribute, have tried to use GitHub and are still stuck, there is also an [email option](http://digitalanalyticscookbook.org/how_to_submit.html).
+If you would like to contribute, have tried to use GitHub and are still stuck, there is also an [email option](http://analyticsplaybook.org/how_to_submit.html).
