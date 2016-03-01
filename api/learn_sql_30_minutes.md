@@ -17,8 +17,8 @@ In this 30-minute video, I cover the most common operations that are done for da
 
 The [example data files](http://randyzwitch.com/wp-content/uploads/2013/11/r-sql-demo-files.zip) are available for download.
 
-{% youtube https://youtu.be/s2oTUsAJfjI %}
-
+<iframe width="640" height="480" src="https://www.youtube.com/embed/s2oTUsAJfjI" frameborder="0" allowfullscreen>
+</iframe>
 
 #### References
 [Video: SQL Queries in R using sqldf](http://randyzwitch.com/sqldf-package-r/)<br>
