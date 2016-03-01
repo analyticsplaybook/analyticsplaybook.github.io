@@ -34,4 +34,4 @@ There are many free Markdown editors you can access directly via a web browser:
 
 Add all your content, proofread your work, and save your changes in a text file with the filename: change_to_your_article_name.md
 
-Email your article as an attachment to: [digitalanalyticscookbook@gmail.com](mailto:digitalanalyticscookbook@gmail.com)
+Email your article as an attachment to: [aplaybookorg@gmail.com](mailto:aplaybookorg@gmail.com)
