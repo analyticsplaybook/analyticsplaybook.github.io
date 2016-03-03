@@ -31,21 +31,27 @@ __Data layer available__: Let's begin by creating the data element. Name the dat
 
 {% highlight javascript %}
 
-if ((typeof(Storage) !== "undefined")&&(sessionStorage.ssVisitorType === undefined)) {
-	if (digitalData.user.segment.loggedIn === "yes") {
-		if (digitalData.user.segment.customer === "yes") {
-			sessionStorage.setItem("ssVisitorType", "customer");
-			localStorage.setItem("lsVisitorType", "customer");
+if (typeof(Storage) !== "undefined") {
+	if(sessionStorage.ssVisitorType === undefined) {
+		if (digitalData.user.segment.loggedIn === "yes") {
+			if (digitalData.user.segment.customer === "yes") {
+				sessionStorage.setItem("ssVisitorType", "customer");
+				localStorage.setItem("lsVisitorType", "customer");
+			} else {
+				sessionStorage.setItem("ssVisitorType", "lead");
+				localStorage.setItem("lsVisitorType", "lead");
+			}
 		} else {
-			sessionStorage.setItem("ssVisitorType", "lead");
-			localStorage.setItem("lsVisitorType", "lead");
+			if (localStorage.lsVisitorType !== undefined)) {
+				sessionStorage.setItem("ssVisitorType", localStorage.getItem("lsVisitorType"));
+			} else {
+				sessionStorage.setItem("ssVisitorType", "prospect");
+				localStorage.setItem("lsVisitorType", "prospect");
+			}
 		}
 	} else {
-		if (localStorage.lsVisitorType !== undefined) {
-			sessionStorage.setItem("ssVisitorType", localStorage.getItem("lsVisitorType"));
-		} else {
-			sessionStorage.setItem("ssVisitorType", "prospect");
-			localStorage.setItem("lsVisitorType", "prospect");
+		if (localStorage.lsVisitorType === undefined) {
+			localStorage.setItem("lsVisitorType", sessionStorage.getItem("ssVisitorType"));
 		}
 	}
 }
@@ -63,7 +69,7 @@ Custom script for visitorTypeLogin, the default value is lead:
 
 {% highlight javascript %}
 
-if (localStorage.lsVisitorType === "prospect") {
+if (localStorage.lsVisitorType === "prospect")) {
 	if (digitalData.user.segment.customer === "yes") {
 		sessionStorage.setItem("ssVisitorType", "customer");
 		localStorage.setItem("lsVisitorType", "customer");
@@ -80,7 +86,7 @@ Custom script for visitorTypePurchase, the default value is customer:
 
 {% highlight javascript %}
 
-if (localStorage.lsVisitorType !== "customer") {
+if (localStorage.lsVisitorType !== "customer")) {
 	sessionStorage.setItem("ssVisitorType", "customer");
 	localStorage.setItem("lsVisitorType", "customer");
 }
@@ -105,11 +111,19 @@ Custom script for visitorType, the default value is prospect:
 
 {% highlight javascript %}
 
-if (localStorage.lsVisitorType !== undefined) {
-	sessionStorage.setItem("ssVisitorType", localStorage.getItem("lsVisitorType"));
-} else {
-	sessionStorage.setItem("ssVisitorType", "prospect");
-	localStorage.setItem("lsVisitorType", "prospect");
+if (typeof(Storage) !== "undefined") {
+	if (sessionStorage.ssVisitorType === undefined) {
+		if (localStorage.lsVisitorType !== undefined) {
+			sessionStorage.setItem("ssVisitorType", localStorage.getItem("lsVisitorType"));
+		} else {
+			sessionStorage.setItem("ssVisitorType", "prospect");
+			localStorage.setItem("lsVisitorType", "prospect");
+		}
+	} else {
+		if (localStorage.lsVisitorType === undefined) {
+			localStorage.setItem("lsVisitorType", sessionStorage.getItem("ssVisitorType"));
+		}
+	}
 }
 return sessionStorage.getItem("ssVisitorType");
 
@@ -119,7 +133,7 @@ Custom script for visitorTypeLogin, the default value is lead:
 
 {% highlight javascript %}
 
-if (localStorage.lsVisitorType === "prospect") {
+if (localStorage.lsVisitorType === "prospect")) {
 	sessionStorage.setItem("ssVisitorType", "lead");
 	localStorage.setItem("lsVisitorType", "lead");
 }
