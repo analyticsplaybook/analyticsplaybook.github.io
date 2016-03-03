@@ -7,27 +7,25 @@ title: Set and record visitors type with Adobe DTM
 # Set and record visitors type with Adobe DTM
 Author: Till Büttner
 
-__Problem__: 
+__Problem__:
 
-As Analyst you want to segment the website visitors. For an eCommerce website you want perhaps to segment your visitors into prospects, leads and customers. But most times you just know the type, when a visitor purchase and gets a customer. 
+As an analyst you want to segment website visitors. For an eCommerce website, perhaps you want to segment your visitors into prospects, leads and customers. But many times, you just know the type, if a visitor purchased (and thus, becomes a "customer").
 
-__Actions__: 
+__Actions__:
 
-We will set up a data element with custom script to identify the visitor type. The explanation will be split into a example with a full data layer and one without a data layer. The first approach was a little bit different to the result now. Significant impact gave a great article from Peter O'Neill in the L3 Analytics Blog entitled [Understanding your Website Visitors: Prospects vs CustomersUnderstanding your Website Visitors: Prospects vs Customers](http://www.l3analytics.com/2016/01/18/understanding-your-website-visitors-prospects-vs-customers/).
+We will set up a data element using custom JavaScript to identify the visitor type. The explanation will be split into a example with a full data layer and one without a data layer. The first approach was a little bit different to the result now. Peter O'Neill outlines this technique in a great L3 Analytics Blog post titled [Understanding your Website Visitors: Prospects vs Customers](http://www.l3analytics.com/2016/01/18/understanding-your-website-visitors-prospects-vs-customers/).
 
-There is a lookup if we know something about the visitor:
+Here is our visitor behavior hierarchy:
 
-- If the visitor purchase once, it's a customer. 
-- If the visitor logged in, it's a lead. 
-- If we don't know anything, it's a prospect.
+- If the visitor has purchased, they are a customer
+- Otherwise, if the visitor is logged in, they are a lead
+- Otherwise, if we don't know anything, they are a prospect.
 
-The custom script uses localStorage and sessionStorage, not cookies. The difference? Cookies are primarily for reading server-side, local storage can only be read client-side. More to read: [What is the difference between localStorage, sessionStorage, session and cookies?](http://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies)
+This custom script uses `localStorage` and `sessionStorage`, not cookies. What's the difference? Cookies are primarily for reading server-side, whereas local storage can only be read client-side. More information: [What is the difference between localStorage, sessionStorage, session and cookies?](http://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies) And, if you are located in the EU, don't forgett about the [EU's cookie law](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). LocalStorage and sessionStorage are treated as cookies.
 
-And please, if you are located in the EU, don't forgett about the [EU's cookie law](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). LocalStorage and sessionStorage are treated as cookies.
+__Explanation (resolution)__:
 
-__Explanation (resolution)__: 
-
-__Data layer available__: Let's begin by creating the data element. Name the data element like the value wich it will serve: visitorType. Switch the type to custom script and open the editor. Copy and paste the following javascript:
+__Data layer available__: Let's begin by creating the data element. Name the data element in reference to the value which it will serve: visitorType. Copy and paste the following javascript into your data layer code:
 
 {% highlight javascript %}
 
@@ -59,13 +57,13 @@ return sessionStorage.getItem("ssVisitorType");
 
 {% endhighlight%}
 
-Save and close the editor and enter prospect as the default value. Remember this value for pageview and save the data element.
+In this code snippet, prospect is the default value (i.e. the absence of other information to place the user higher up on the hierarchy). Then, remember this value for a pageview and save the data element.
 
-What is done here? We use conditional statements to prove if web storage is supported by the browser and if the sessionStorage for the visitor type isn't set. Afterwards we dig into the data layer and set the localStorage and sessionStorage to the equivalent visitor type. If there is no information available we look up if the localStorage is set and if not the visitor type will be prospect.
+We use conditional statements to determine if web storage is supported by the browser and if the sessionStorage for the visitor type isn't set. If so, we dig into the data layer and set the localStorage and sessionStorage to the equivalent visitor type. If there is no information available, we look up if the localStorage is set and if not the visitor type will be `prospect`.
 
-We need two more data elements. One named visitorTypeLogin and the other one named visitorTypePurchase.
+We can also create two more data elements: visitorTypeLogin and visitorTypePurchase.
 
-Custom script for visitorTypeLogin, the default value is lead:
+Here is the custom script for visitorTypeLogin, where the default value is `lead`:
 
 {% highlight javascript %}
 
@@ -82,7 +80,7 @@ return sessionStorage.getItem("ssVisitorType");
 
 {% endhighlight%}
 
-Custom script for visitorTypePurchase, the default value is customer:
+Custom script for visitorTypePurchase, the default value is `customer`:
 
 {% highlight javascript %}
 
@@ -94,19 +92,18 @@ return sessionStorage.getItem("ssVisitorType");
 
 {% endhighlight%}
 
-Both custom scripts do the same checks as the first one, just trimmed down to the needs.
+All custom scripts basically do the same thing, with slightly different business logic.
 
-After all this we just need three page load rules:
+After this, we create three page load rules:
 
-- one wich fits on every page, where the designated eVar is set to %visitorType%. Its also possible to track this in the tool properties, so you don't need a extra page load rule.
-- one wich is loaded after login, where the designated eVar is set to %visitorTypeLogin%.
-- and the last wich is loaded after purchase, where the designated eVar is set to %visitorTypePurchase%.
+1) On every page, a designated tracking variable is set to %visitorType%. (It's also possible to track this in the Adobe DTM properties, so then you wouldn't even need an extra page load rule).
+2) After login, where the designated tracking variable is set to %visitorTypeLogin%.
+3) After purchase, where the designated tracking variable is set to %visitorTypePurchase%.
 
-The condition trigger should be, after the data layer exists in the DOM. As example the data layer is loaded after the opening body tag, the rule should be triggerd bottom of page. Furthermore think of the trigger of your adobe analytics call. It should be after these page load rules to avoid two pageviews. 
+The conditions should be evaluated after the data layer exists in the DOM. As an example, if the data layer is loaded after the opening `<body>` tag, the rule should be triggered at the bottom of page. If you're using Adobe Analytics call, the tracking script should be after these page load rules to avoid two pageviews.
 
-Thats it.
+__Data layer not available__: If a data layer is not available, there is a slight change in the first two custom scripts and as you can imagine it will make tracking less accurate.
 
-__Data layer not available__: There is just a change in the first two custom scripts and as you can imagine it is not so accurate.
 Custom script for visitorType, the default value is prospect:
 
 {% highlight javascript %}
@@ -141,10 +138,10 @@ return sessionStorage.getItem("ssVisitorType");
 
 {% endhighlight%}
 
-The page load rules have to be the same.
+The page load rules in your tag manager would be the same.
 
 __View last Words__: Please remember
-> The first caveat is that this data will not be, and could never be, 100% accurate. For visitors who are not logged in, it is just not possible to know definitely whether they are an existing customer or a prospect. The accuracy will improve over time as customers return and can be identified as such even if not logged in. However, this does not work if they delete their cookie or use a different device. (Peter O'Neill in "Understanding your Website Visitors")
+> The first caveat is that this data will not be, and could never be, 100% accurate. For visitors who are not logged in, it is just not possible to know definitely whether they are an existing customer or a prospect. Your accuracy will improve over time as customers return and can be identified, even if they are not logged in. However, this does not work if they delete their cookie or use a different device. (see Peter O'Neill in "Understanding your Website Visitors")
 
 #### References
 [Understanding your Website Visitors: Prospects vs CustomersUnderstanding your Website Visitors: Prospects vs Customers](http://www.l3analytics.com/2016/01/18/understanding-your-website-visitors-prospects-vs-customers/) <br>
