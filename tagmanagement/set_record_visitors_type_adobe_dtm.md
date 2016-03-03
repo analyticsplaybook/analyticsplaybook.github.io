@@ -5,7 +5,7 @@ title: Set and record visitors type with Adobe DTM
 
 ---
 # Set and record visitors type with Adobe DTM
-Author: Till Büttner
+Author: Till BÃ¼ttner
 
 __Problem__: 
 
@@ -41,7 +41,7 @@ if ((typeof(Storage) !== "undefined")&&(sessionStorage.ssVisitorType === undefin
 			localStorage.setItem("lsVisitorType", "lead");
 		}
 	} else {
-		if (localStorage.lsVisitorType !== undefined)) {
+		if (localStorage.lsVisitorType !== undefined) {
 			sessionStorage.setItem("ssVisitorType", localStorage.getItem("lsVisitorType"));
 		} else {
 			sessionStorage.setItem("ssVisitorType", "prospect");
@@ -63,7 +63,7 @@ Custom script for visitorTypeLogin, the default value is lead:
 
 {% highlight javascript %}
 
-if (localStorage.lsVisitorType === "prospect")) {
+if (localStorage.lsVisitorType === "prospect") {
 	if (digitalData.user.segment.customer === "yes") {
 		sessionStorage.setItem("ssVisitorType", "customer");
 		localStorage.setItem("lsVisitorType", "customer");
@@ -80,7 +80,7 @@ Custom script for visitorTypePurchase, the default value is customer:
 
 {% highlight javascript %}
 
-if (localStorage.lsVisitorType !== "customer")) {
+if (localStorage.lsVisitorType !== "customer") {
 	sessionStorage.setItem("ssVisitorType", "customer");
 	localStorage.setItem("lsVisitorType", "customer");
 }
@@ -105,7 +105,7 @@ Custom script for visitorType, the default value is prospect:
 
 {% highlight javascript %}
 
-if (localStorage.lsVisitorType !== undefined)) {
+if (localStorage.lsVisitorType !== undefined) {
 	sessionStorage.setItem("ssVisitorType", localStorage.getItem("lsVisitorType"));
 } else {
 	sessionStorage.setItem("ssVisitorType", "prospect");
@@ -119,7 +119,7 @@ Custom script for visitorTypeLogin, the default value is lead:
 
 {% highlight javascript %}
 
-if (localStorage.lsVisitorType === "prospect")) {
+if (localStorage.lsVisitorType === "prospect") {
 	sessionStorage.setItem("ssVisitorType", "lead");
 	localStorage.setItem("lsVisitorType", "lead");
 }
