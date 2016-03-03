@@ -10,8 +10,8 @@ Author: Till Büttner
 __Problem__: Quote from W3C Customer Experience Digital Data Layer:
 
 >"Collection and analysis of visitor behavioral and demographic data has become an integral part of web application design and website success, whether accessed through browsers on laptop, mobile, kiosk, tablet or another device. This data is central to site performance analysis, dynamically tailoring site content to visitor activity and interest and retargeting visitors based on their behaviors.
-
-Increasingly, multiple vendors are involved in the data collection process for a given digital property, and each has a solution to be implemented on the page. As a result, page design has
+>
+>Increasingly, multiple vendors are involved in the data collection process for a given digital property, and each has a solution to be implemented on the page. As a result, page design has
 become more complex and development cycles have lengthened as different requirements for data surfacing and formatting are added to the implementation process. Further, changing or
 adding vendors sometimes requires that the development team change designs to accommodate vendor-specific requirements. Common data items must be continually surfaced in different ways, and each design requirement is a custom effort."<sup>1</sup> (p. 1)
 
