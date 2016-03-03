@@ -92,9 +92,11 @@ Both custom scripts do the same checks as the first one, just trimmed down to th
 
 After all this we just need three page load rules:
 
-- one wich fits on every page, where the designated eVar is set to %visitorType%.
+- one wich fits on every page, where the designated eVar is set to %visitorType%. Its also possible to track this in the tool properties, so you don't need a extra page load rule.
 - one wich is loaded after login, where the designated eVar is set to %visitorTypeLogin%.
 - and the last wich is loaded after purchase, where the designated eVar is set to %visitorTypePurchase%.
+
+The condition trigger should be, after the data layer exists in the DOM. As example the data layer is loaded after the opening body tag, the rule should be triggerd bottom of page. Furthermore think of the trigger of your adobe analytics call. It should be after these page load rules to avoid two pageviews. 
 
 Thats it.
 
