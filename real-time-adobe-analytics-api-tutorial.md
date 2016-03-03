@@ -18,8 +18,6 @@ __Actions__: Use the lessons from an Adobe Summit lab session to walk-though how
 
 ![Adobe Analytics Real-Time Dashboard](http://i2.wp.com/www.ryanpraski.com/wp-content/uploads/2016/01/adobe_analytics_real-time_dashboard_sample_.png)
 
-![Adobe Analytics Real-Time Dashboard](images/adobe_analytics_real-time_dashboard_example.png)
-
 __Explanation (resolution)__:
 
 Start by [downloading the analytics realtime dashboard example](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/archive/master.zip) from GitHub. Find this in your downloads and unzip it. I unzipped the folder on my desktop for this example.
