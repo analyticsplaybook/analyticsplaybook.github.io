@@ -79,4 +79,4 @@ If you have any questions please see the references below or hit me up on Twitte
 
 [Full Post on ryanpraski.com](http://www.ryanpraski.com/real-time-reporting-adobe-analytics-api-tutorial/)
 
-[Adobe Analytics Real-Time Dashboard Example Lab Lesson on GitHub](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/tree/master/lessons)
+[Adobe Analytics Real-Time Dashboard Example Lab Lessons on GitHub](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/tree/master/lessons)
