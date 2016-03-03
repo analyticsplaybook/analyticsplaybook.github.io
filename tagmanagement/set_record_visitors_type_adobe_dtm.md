@@ -1,10 +1,10 @@
 ---
 
 layout: responsive
-title: Set and record visitors type with Adobe DTM
+title: Set and Record Visitor Type with Adobe DTM
 
 ---
-# Set and record visitors type with Adobe DTM
+# Set and Record Visitor type with Adobe DTM
 Author: Till Büttner
 
 __Problem__:
@@ -96,9 +96,9 @@ All custom scripts basically do the same thing, with slightly different business
 
 After this, we create three page load rules:
 
-1) On every page, a designated tracking variable is set to %visitorType%. (It's also possible to track this in the Adobe DTM properties, so then you wouldn't even need an extra page load rule).
-2) After login, where the designated tracking variable is set to %visitorTypeLogin%.
-3) After purchase, where the designated tracking variable is set to %visitorTypePurchase%.
+1) On every page, an eVar is set to %visitorType%. (It's also possible to track this in the Adobe DTM properties, so then you wouldn't even need an extra page load rule).
+2) After a login, the eVar is set to %visitorTypeLogin%.
+3) After a purchase, where the eVar is set to %visitorTypePurchase%.
 
 The conditions should be evaluated after the data layer exists in the DOM. As an example, if the data layer is loaded after the opening `<body>` tag, the rule should be triggered at the bottom of page. If you're using Adobe Analytics call, the tracking script should be after these page load rules to avoid two pageviews.
 
