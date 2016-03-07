@@ -18,4 +18,4 @@ In this 8-minute video, Matt Gershoff, CEO of Conductrics, will walk you through
 
 #### References
 [Video: Intro to Page Editing for Simple A-B Testing](https://www.youtube.com/watch?v=TONyWnkdjDg)<br>
-[Conductrics doucmentation](http://support.conductrics.com)<br>
+[Conductrics documentation](http://support.conductrics.com)<br>
