@@ -1,7 +1,7 @@
 ---
 
 layout: responsive
-title: Conductrics: Intro to Page Editing for Simple A-B Testing
+title: Conductrics - Intro to Page Editing for Simple A-B Testing
 
 ---
 # Conductrics: Intro to Page Editing for Simple A-B Testing
@@ -19,4 +19,3 @@ In this 8-minute video, Matt Gershoff, CEO of Conductrics, will walk you through
 #### References
 [Video: Intro to Page Editing for Simple A-B Testing](https://www.youtube.com/watch?v=TONyWnkdjDg)<br>
 [Conductrics doucmentation](http://support.conductrics.com)<br>
-
