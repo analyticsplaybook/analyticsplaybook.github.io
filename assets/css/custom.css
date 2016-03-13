@@ -30,3 +30,7 @@ body {
     width: 250px;
     overflow-y: auto;
 }
+
+.affix {
+    position: relative;
+}
