@@ -17,8 +17,8 @@ You need two Page Load Rules (PLR) to track the previous page name. First PLR:
 
 - Name: Save prior page name to session storage
 - Trigger Rule at "DOM Ready"
-- Rule Condition: Path ".*"" (regex enabled)
-- Custom Code �None-Sequential Javascript�:
+- Rule Condition: Path ".*" (regex enabled)
+- Custom Code "None-Sequential Javascript":
 
 {% highlight javascript %}
 if(typeof(Storage) != "undefined") {
@@ -33,7 +33,7 @@ Second PLR:
 - Name: Save prior page name to prop
 - Trigger Rule at "Bottom of Page"
 - Rule Condition: Path ".*" (regex enabled)
-- Rule Condition: Custom:
+- Rule Condition - Custom:
 
 {% highlight javascript %}
 if(typeof(Storage) !== "undefined") {
