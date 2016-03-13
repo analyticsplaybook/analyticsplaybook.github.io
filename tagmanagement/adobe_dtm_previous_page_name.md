@@ -1,24 +1,24 @@
 ---
 
 layout: minimal
-title: Adobe DTM - Previous page name
+title: Adobe DTM - Previous Page Name
 
 ---
 
-# Adobe DTM - Previous page name
+# Adobe DTM - Previous Page Name
 
-__Problem__: You want to track the previous page name via  Adobe DTM but can't use a Plugin (getPreviousValue).
+__Problem__: You want to track the previous page name via Adobe DTM but you can't use a Plugin (getPreviousValue).
 
-__Actions__: You can use Session Storage to track the previous page name. 
+__Actions__: You can use Session Storage to track the previous page name.
 
-__Explanation (resolution)__: 
+__Explanation (resolution)__:
 
-You need two Page Load Rules to track the previous page name. First PLR:
+You need two Page Load Rules (PLR) to track the previous page name. First PLR:
 
-- Name: Save ppn to session storage
-- Trigger Rule at “DOM Ready”
-- Rule Condition: Path “.*” (regex enabled)
-- Custom Code “None-Sequential Javascript”:
+- Name: Save prior page name to session storage
+- Trigger Rule at "DOM Ready"
+- Rule Condition: Path ".*"" (regex enabled)
+- Custom Code ï¿½None-Sequential Javascriptï¿½:
 
 {% highlight javascript %}
 if(typeof(Storage) != "undefined") {
@@ -30,14 +30,14 @@ if(typeof(Storage) != "undefined") {
 
 Second PLR:
 
-- Name: Save ppn to prop
-- Trigger Rule at “Bottom of Page”
-- Rule Condition: Path “.*” (regex enabled)
+- Name: Save prior page name to prop
+- Trigger Rule at "Bottom of Page"
+- Rule Condition: Path ".*" (regex enabled)
 - Rule Condition: Custom:
 
 {% highlight javascript %}
-if(typeof(Storage) !== "undefined") { 
-  if(typeof(sessionStorage.getItem("pagename")) != "undefined") { 
+if(typeof(Storage) !== "undefined") {
+  if(typeof(sessionStorage.getItem("pagename")) != "undefined") {
     var prevPageName = sessionStorage.getItem("pagename");
     _satellite.setVar("previousPage",prevPageName);
     return true;
