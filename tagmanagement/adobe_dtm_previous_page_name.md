@@ -1,11 +1,11 @@
 ---
 
-layout: minimal
+layout: responsive
 title: Adobe DTM - Previous Page Name
 
 ---
-
 # Adobe DTM - Previous Page Name
+Author: Till Büttner
 
 __Problem__: You want to track the previous page name via Adobe DTM but you can't use a Plugin (getPreviousValue).
 
