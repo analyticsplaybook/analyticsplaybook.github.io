@@ -37,7 +37,7 @@ Second PLR:
 
 {% highlight javascript %}
 if(typeof(Storage) !== "undefined") {
-  if(typeof(sessionStorage.getItem("pagename")) != "undefined") {
+  if(typeof(sessionStorage.getItem("pagename")) === "string") {
     var prevPageName = sessionStorage.getItem("pagename");
     _satellite.setVar("previousPage",prevPageName);
     return true;
