@@ -27,8 +27,20 @@ body {
 }
 
 #menu {
-    width: 250px;
-    overflow-y: auto;
+  overflow-y: auto;
+  width: auto;
+}
+
+@media (min-width: 1200px) {
+  #menu {
+    width: initial;
+  }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  #menu {
+    width: initial;
+  }
 }
 
 .affix {
