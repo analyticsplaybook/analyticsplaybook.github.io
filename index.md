@@ -32,7 +32,7 @@ While authors should feel free to link back to their own sites as necessary (suc
 
 Submissions will be made using GitHub, using [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/#syntax). By using GitHub, this project can truly be a community affair; not only can anyone create a GitHub account for free, but articles will be able to be edited by anyone via pull request (subject to community discussion/approval).
 
-A [template](https://raw.githubusercontent.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/master/template.md) is provided for convenience. Markdown takes a little bit of getting used to, but ultimately it's a great plain-text format, while still allowing for rich display of content. A simple submission could just be to place a Markdown file in the main directory (where [index.md](https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/blob/master/index.md) resides), and editing the [sidebar.html](https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/blob/master/_layouts/minimal.html) file to include the link to your article under the proper heading.
+A [template](https://raw.githubusercontent.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/master/template.md) is provided for convenience. Markdown takes a little bit of getting used to, but ultimately it's a great plain-text format, while still allowing for rich display of content. A simple submission could just be to place a Markdown file in the directory of your topic, making sure to set a category in the header so that the post is automatically placed under the proper heading.
 
 ## GitHub Resources
 

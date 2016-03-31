@@ -22,7 +22,7 @@ sales = pd.read_csv('http://analyticsplaybook.org/api/sample-sales.csv')
 
 Once we have imported our sales data, we can use sales.head() to get a sense of how our data is formatted.
 
-![Sample Sales Data](/api/images/pygroup_sample_sales.png)
+![Sample Sales Data](/images/pygroup_sample_sales.png)
 
 We can see from the data format that we can use 'category' and 'quantity' to properly group the sales data. 
 
@@ -32,7 +32,7 @@ To get the frequency of how often specific quantities are purchased for each cat
 catFreq = sales.groupby(['category','quantity'])['category'].agg({'Frequency':'count'})
 {% endhighlight %}
 
-![Sample Sales Data](/api/images/pygroup_sample_results.png)
+![Sample Sales Data](/images/pygroup_sample_results.png)
 
 
 

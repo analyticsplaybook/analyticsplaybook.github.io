@@ -4,3 +4,5 @@ gems:
 
 twitter:
   username: APlaybookOrg
+
+permalink: /:categories/:title.html

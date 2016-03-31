@@ -13,7 +13,7 @@ __Actions__: We will walk through sample workflow, using Adobe Target Classic, t
 
 __Explanation (resolution)__: Let's begin by creating a new Campaign that will be used for development and QA purposes.
 
-![Adobe Target - Create New Campaign](images/target_new_campaign.png)
+![Adobe Target - Create New Campaign](/images/target_new_campaign.png)
 
 Our campaign naming syntax contains 'the date the campaign was created' - 'campaign description' - '{optional environment}  We also use of Tags to bucket campaigns as QA or Production so they are easy to locate as well.
 
@@ -23,13 +23,13 @@ If should be noted that we keep these campaigns live, even after launching the p
 
 Next will with add targeting at the Location (mBox) level.
 
-![Adobe Target - Target Location](images/target_target_location.png)
+![Adobe Target - Target Location](/images/target_target_location.png)
 
 Here is where the use of query string parameters come into play. At the Location (mBox) level, we add a Target that looks for a name:value pair. In our case, we always use 'campaign' as the name and the value is typically a term that identifies the specific campaign. In this example, since we are running a test on the site home page, we made the name equal 'shp'.
 
 Now we will add targeting at the Experience level.
 
-![Adobe Target - Target Location](images/target_target_experience.png)
+![Adobe Target - Target Location](/images/target_target_experience.png)
 
 This is where we make use of query string parameters to determine what Experience we want to be included in. Again we will make use of a name:value pair to qualify for a specific experience. The name we use is 'v' (for version) and for the control we use 'control' for the value. We will use the same format to target the test experience(s), in this example, we have only one test experience that we will call 'cta' as shown in the screenshot above.
 
@@ -44,7 +44,7 @@ Homepage CTA: http://www.site.com/?campaign=shp&v=cta
 
 Once testing has been completed and the business has signed off on the test, we can promote our test to production a.k.a "make it live." To do this, we will make a copy of the QA campaign (but leave the campaign active) to create a production ready version.
 
-![Adobe Target - Target Location](images/target_production_campaign.png)
+![Adobe Target - Target Location](/images/target_production_campaign.png)
 
 Make the following changes to the campaign setup:
 
@@ -56,7 +56,7 @@ Make the following changes to the campaign setup:
 
 4. Update the Targeting rule at the Location (mBox) level to be 'does not contain campaign=' What this does is help keep Production and QA campaigns separated, which can often be a challenge when you are running several campaigns at once. This step isn't required but I have found that is has helped keep things cleaner.
 
-![Adobe Target - Target Location](images/target_production_exclude.png)
+![Adobe Target - Target Location](/images/target_production_exclude.png)
 
 
 #### References

@@ -22,19 +22,19 @@ Let's use a working example to understand how we can use `_satellite.notify()` t
 
 #### Intensity 1 - A message that the pixel fired
 `_satellite.notify("DoubleClick tag fired.", 1);`
-![DTM Level 1 Notification](images/dtm_notify_1.png)
+![DTM Level 1 Notification](/images/dtm_notify_1.png)
 
 #### Intensity 3 - A message about the end of the campaign
 `_satellite.notify("The DoubleClick campaign ends in 5 days.", 3);`
-![DTM Level 3 Notification](images/dtm_notify_3.png)
+![DTM Level 3 Notification](/images/dtm_notify_3.png)
 
 #### Intensity 4 - A message that the campaign has ended
 `_satellite.notify("The DoubleClick campaign has ended. Please remove the pixel from Adobe DTM.", 4);`
-![DTM Level 4 Notification](images/dtm_notify_4.png)
+![DTM Level 4 Notification](/images/dtm_notify_4.png)
 
 #### Intensity 5 - A message alerting a critical issue
 `_satellite.notify("The DoubleClick servers are taking longer than 3 seconds to respond.", 5);`
-![DTM Level 5 Notification](images/dtm_notify_5.png)
+![DTM Level 5 Notification](/images/dtm_notify_5.png)
 
 #### References
 [Avoid the Marketing Pixel Wasteland](http://33sticks.com/avoid-the-marketing-pixel-wasteland/)
