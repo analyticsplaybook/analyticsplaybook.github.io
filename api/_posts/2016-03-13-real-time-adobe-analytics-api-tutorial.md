@@ -20,11 +20,11 @@ __Actions__: Use the lessons from an Adobe Summit lab session to walk-though how
 
 __Explanation (resolution)__:
 
-Start by [downloading the analytics realtime dashboard example](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/archive/master.zip) from GitHub. Find this in your downloads and unzip it. I unzipped the folder on my desktop for this example.
+Start by [downloading the analytics realtime dashboard example](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/archive/617ebe20228a6f499feb3953b50dee4ccbee251b.zip) from GitHub. Find this in your downloads and unzip it. I unzipped the folder on my desktop for this example.
 
 *I skipped Lesson 1-5 to keep the tutorial short. When you have time I highly recommend going through these lessons.* 
 
-[Lesson 6](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/tree/master/lessons/lesson_6)
+[Lesson 6](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/tree/617ebe20228a6f499feb3953b50dee4ccbee251b/lessons/lesson_6)
 
 **Create a Snazzy Real-Time Adobe Analytics Dashboard Now**
 
@@ -42,7 +42,7 @@ Below is a sample config.js file. Make sure to update it with your credentials a
 
 2) Find the Lesson 6 folder on your computer. The path to the folder on my computer is: C:\Users\ryanpraski\Desktop\analytics-realtime-dashboard-example-master\lessons\lesson_6
 
-3) Open the README file in the lesson_6 folder in your text editor or [on GitHub](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/tree/master/lessons/lesson_6).
+3) Open the README file in the lesson_6 folder in your text editor or [on GitHub](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/tree/617ebe20228a6f499feb3953b50dee4ccbee251b/lessons/lesson_6).
 
 4) Open the lesson_6.html file in your web browser and then open it a second time in a text editor. The path to the folder on my computer is: C:\Users\ryanpraski\Desktop\analytics-realtime-dashboard-example-master\lessons\lesson_6\lesson_6.html
 
@@ -79,4 +79,4 @@ If you have any questions please see the references below or hit me up on Twitte
 
 [Full Post on ryanpraski.com](http://www.ryanpraski.com/real-time-reporting-adobe-analytics-api-tutorial/)
 
-[Adobe Analytics Real-Time Dashboard Example Lab Lessons on GitHub](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/tree/master/lessons)
+[Adobe Analytics Real-Time Dashboard Example Lab Lessons on GitHub](https://github.com/Adobe-Marketing-Cloud/analytics-realtime-dashboard-example/tree/617ebe20228a6f499feb3953b50dee4ccbee251b)
