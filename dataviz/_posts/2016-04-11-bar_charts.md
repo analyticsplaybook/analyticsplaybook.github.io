@@ -4,7 +4,7 @@ title: Making Great Bar Charts In R
 
 ---
 
-#Making Great Bar Charts In R
+# Making Great Bar Charts In R
 
 Author: Jowanza Joseph
 
@@ -12,7 +12,7 @@ Author: Jowanza Joseph
 
 **Actions:** We will walk through an example of how to create a useful and beautiful barchart in R. 
 
-###Example
+### Example
 
 In R, the library ggplot2 is your best friend when it comes to creatingstatic bar charts. You can create a simple one with the following code:
 
