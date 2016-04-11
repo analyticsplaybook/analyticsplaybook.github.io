@@ -1,3 +1,9 @@
+---
+layout: responsive
+title: Making Great Bar Charts In R
+
+---
+
 #Making Great Bar Charts In R
 
 Author: Jowanza Joseph
@@ -10,26 +16,26 @@ Author: Jowanza Joseph
 
 In R, the library ggplot2 is your best friend when it comes to creatingstatic bar charts. You can create a simple one with the following code:
 
-```R
+{% highlight r%}
 library(ggplot2)
 
 ggplot(mpg, aes(class, fill = class)) + geom_bar()
 
-```
+{% endhighlight %}
 ![image](http://i.imgur.com/ZPrONaq.png)
 
 This bar chart is simple and effect but we can do better. We can start simple by adding titles.
 
-```R
+{% highlight r%}
 ggplot(mpg, aes(class, fill = class)) + geom_bar() +
   labs(title = "Count of Car Classes MPG Dataset", x = "Car Class", y = "Count")
-```
+{% endhighlight %}
 
 ![image](http://i.imgur.com/56OPrfU.png)
 
 The background space in this chart isn't really pleasing to the eyes. We can make a customize the chart and make it all grey for effect:
 
-```R
+{% highlight r%}
 library(ggplot2)
 library(scales)
 library(grid) 
@@ -50,7 +56,7 @@ ggplot(mpg, aes(class, fill = class)) + geom_bar() +
   theme(plot.background=element_rect(fill=color.background, color=color.background)) +
   theme(panel.border=element_rect(color=color.background))+
   theme(legend.background = element_rect(fill=color.background))
-```
+{% endhighlight %}
 
 ![image](https://i.imgur.com/dQ3YlQZ.png)
 
@@ -64,8 +70,7 @@ A few more modifications can be made.
 6. Remove the legend (doesn't add any value)
 7. Some other aesthetic fixes
 
-
-```R
+{% highlight r%}
 library(ggplot2)
 library(scales)
 library(grid) 
@@ -89,11 +94,7 @@ ggplot(newMPG, aes(x=reorder(class, +total), total)) + coord_flip()+ geom_bar(fi
   geom_text(aes(y=total - 1, label=total), position = position_dodge(.09), vjust= .5, size = 3, hjust = 1.3, fontface= "bold", family = "Hack")+
   my_theme()
   
-
-
-
 my_theme <- function() {
-  
   
   # Generate the colors for the chart procedurally with RColorBrewer
   palette <- brewer.pal("Greys", n=9)
@@ -103,10 +104,8 @@ my_theme <- function() {
   color.axis.title = palette[7]
   color.title = palette[9]
   
-  
   # Begin construction of chart
   theme_bw(base_size=9) +
-    
     
     # Set the entire chart region to a light gray color
     theme(panel.background=element_rect(fill=color.background, color=color.background)) +
@@ -138,16 +137,13 @@ my_theme <- function() {
     # Plot margins
     theme(plot.margin = unit(c(0.35, 0.2, 0.3, 0.35), "cm"))
 }
-```
+{% endhighlight %}
 ![image](http://i.imgur.com/DOnynEA.png)
 
 Now we have a chart worth sharing.
 
 
-
-
-
-Sources:
+#### References:
 
 [ggplot2](http://docs.ggplot2.org/current/)
 
