@@ -1,18 +1,22 @@
 ---
 
-layout: responsive
+layout: post
 title: Aggregate Sales Data using Python
-
+date:   2016-03-20
+author: Jason Thompson
+category: api
+tags:
+  - api
+  - group
+  
 ---
 
-# Aggregate Sales Data using Python
-Author: Jason Thompson
+### Problem
+As an analyst, you are asked to provide insights into the frequency in which specific quantities of your products are ordered. To help make the insights more actionable, your boss has requested that your analysis be done at the product category level.
 
 
-__Problem__: As an analyst, you are asked to provide insights into the frequency in which specific quantities of your products are ordered. To help make the insights more actionable, your boss has requested that your analysis be done at the product category level.
-
-
-__Actions__: We can pull our sales data into Python to quickly group and aggregate the data.
+### Actions
+We can pull our sales data into Python to quickly group and aggregate the data.
 
 {% highlight python %}
 #import sales data from csv
@@ -36,12 +40,12 @@ catFreq = sales.groupby(['category','quantity'])['category'].agg({'Frequency':'c
 
 
 
-__Explanation (resolution)__:
+### Explanation (resolution)
 
 Using a few simple commands in Python, we can quickly group, sales.groupby(['category','quantity']), and aggregate, .agg({'Frequency':'count'}), the sales data to provide the insights that were requested. 
 
 
 
-#### References
+### References
 [pandas.DataFrame.groupby](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) <br>
 [Sample sales data from Practical Business Python](http://pbpython.com/extras/sample-sales.csv)

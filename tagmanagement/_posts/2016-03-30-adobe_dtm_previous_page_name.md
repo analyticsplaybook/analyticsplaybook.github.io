@@ -1,17 +1,27 @@
 ---
 
-layout: responsive
+layout: post
 title: Adobe DTM - Previous Page Name
+date:   2016-03-30
+author: Till Buettner
+category: tagmanagement
+tags:
+  - adobedtm
+  - tms
+  - tracking
+  - adobeanalytics
 
 ---
-# Adobe DTM - Previous Page Name
-Author: Till Büttner
 
-__Problem__: You want to track the previous page name via Adobe DTM but you can't use a Plugin (getPreviousValue).
+### Problem
 
-__Actions__: You can use Session Storage to track the previous page name.
+You want to track the previous page name via Adobe DTM but you can't use a Plugin (getPreviousValue).
 
-__Explanation (resolution)__:
+### Actions
+
+You can use Session Storage to track the previous page name.
+
+### Explanation (resolution)
 
 You need two Page Load Rules (PLR) to track the previous page name. First PLR:
 
@@ -49,5 +59,5 @@ if(typeof(Storage) !== "undefined") {
 
 There you go, the previous pageName is implemented.
 
-#### References
+### References
 [Previous page name - apastebin](http://apastebin.tumblr.com/post/139627646180/adobe-analytics-dtm-previous-pagename)

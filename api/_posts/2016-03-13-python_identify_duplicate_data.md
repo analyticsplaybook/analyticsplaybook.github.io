@@ -1,19 +1,25 @@
 ---
 
-layout: responsive
+layout: post
 title: Identifying Duplicate Sales Data using Python
+date:   2016-03-13
+author: Jason Thompson
+category: api
+tags:
+  - api
+  - python
 
 ---
-# Identifying Duplicate Sales Data using Python
-Author: Jason Thompson
 
-__Problem__: More often than not, analysts are given data that is unstructured and dirty. In this example, an analyst has been provided a 300MB Excel Workbook containing sales transactions, however it has been noted that several of the transactions have been duplicated in the data. Before doing any analysis of the sales data, the duplicate data needs to be cleaned up.
+### Problem
+More often than not, analysts are given data that is unstructured and dirty. In this example, an analyst has been provided a 300MB Excel Workbook containing sales transactions, however it has been noted that several of the transactions have been duplicated in the data. Before doing any analysis of the sales data, the duplicate data needs to be cleaned up.
 
-__Actions__: Our sample dataset contains every order transaction for 2015. The data is structured in such a way that each item purchased, in an order, is a unique row in the data. If an order contained three unique product SKUs, that one order would have three rows in the dataset.
+### Actions
+Our sample dataset contains every order transaction for 2015. The data is structured in such a way that each item purchased, in an order, is a unique row in the data. If an order contained three unique product SKUs, that one order would have three rows in the dataset.
 
 We need to identify orders that contain duplicated order line items, those duplicates would have a SKU that appears in more than one row of data, for a given order_id, as shown below.
 
-![Duplicate Data Example](images/python_duplicate_order_example.png)
+![Duplicate Data Example]({{ site.baseurl }}/images/python_duplicate_order_example.png)
 
 
 Notes about the data:
@@ -23,7 +29,7 @@ Notes about the data:
   * order_item_quantity: The number each SKU purchased for an order
   * order_item_cost_price: The individual unit price of a SKU purchased
 
-__Explanation (resolution)__:
+### Explanation (resolution)
 
 Let's begin begin by importing the pandas library. pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for Python.
 
@@ -119,6 +125,6 @@ In [9]:
 df_nodup.to_csv('2015sales_nodup.csv', encoding='utf-8')
 {% endhighlight %}
 
-#### References
+### References
 
 [GitHub Gist](https://gist.github.com/33sticks/b092f7e45b1fc089e360)

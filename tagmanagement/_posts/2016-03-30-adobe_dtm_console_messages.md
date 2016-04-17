@@ -1,17 +1,25 @@
 ---
 
-layout: responsive
+layout: post
 title: Adobe DTM - Using Browser Console Messages
+date:   2016-03-30
+author: Jason Thompson
+category: tagmanagement
+tags:
+  - adobedtm
+  - console
+  - debugging
+  - tms
 
 ---
-# Adobe DTM - Using Browser Console Messages
-Author: Jason Thompson
 
-__Problem__: Error messaging, or messaging in general, is often overlooked in the development process causing difficulties in debugging and managing code deployed by a TMS.
+### Problem
+Error messaging, or messaging in general, is often overlooked in the development process causing difficulties in debugging and managing code deployed by a TMS.
 
-__Actions__: You can leverage a function called `_satellite.notify()`, a cross browser supported function, contained within DTM to send informative messages to the browser console. This is especially helpful when deploying 3rd party scripts. 
+### Actions
+You can leverage a function called `_satellite.notify()`, a cross browser supported function, contained within DTM to send informative messages to the browser console. This is especially helpful when deploying 3rd party scripts. 
 
-__Explanation (resolution)__:
+### Explanation (resolution)
 
 At it's most basic level, `_satellite.notify()` takes two arguments to send a message to the browser console:
 
@@ -36,5 +44,5 @@ Let's use a working example to understand how we can use `_satellite.notify()` t
 `_satellite.notify("The DoubleClick servers are taking longer than 3 seconds to respond.", 5);`
 ![DTM Level 5 Notification](/images/dtm_notify_5.png)
 
-#### References
+### References
 [Avoid the Marketing Pixel Wasteland](http://33sticks.com/avoid-the-marketing-pixel-wasteland/)

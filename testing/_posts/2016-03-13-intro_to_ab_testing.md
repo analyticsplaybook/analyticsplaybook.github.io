@@ -1,15 +1,21 @@
 ---
 
-layout: responsive
+layout: post
 title: Introduction to AB Testing and P-Values
+date:   2016-03-13
+author: Matt Gershoff
+category: testing
+tags:
+  - ab-testing
+  - p-values
 
 ---
 
-# Introduction to AB Testing and P-Values
-
-Author: Matt Gershoff
+###Information
 
 _A version of this post was originally published over at [ConversionXL](http://conversionxl.com/pulling-back-curtain-p-values-learned-love-small-data/)_
+
+###Article
 
 For all of the talk about how awesome (and big, don’t forget big) Big data is, one of the favorite tools in the conversion optimization toolkit, AB Testing, is decidedly small data. Optimization, winners and losers, Lean this that or the other thing, at the end of the day, A/B Testing is really just an application of sampling.
 
@@ -17,7 +23,7 @@ You take couple of alternative options (eg. ‘50% off’ v ‘Buy One Get One F
 
 These are actually deep questions, and in order to begin to get a handle on them, we will need to have a basic grasp of sampling.
 
-## A few preliminaries
+### A few preliminaries
 
 Before we get going, we should quickly go over the basic building blocks of AB Testing. I am sure you know most of this stuff already, but can’t hurt to make sure everyone is on the same page:
 
@@ -44,7 +50,7 @@ The more variability in the temperature of coffee at each restaurant, the more w
 
 Remember, high test KPI -> more evidence that any difference isn’t just by chance.
 
-## Always Sample before you Buy
+### Always Sample before you Buy
 
 Okay now that we have that out of the way, we can spend a bit of time on sampling in order to shed some light on the mysterious P-Value.
 
@@ -56,13 +62,13 @@ We often talk about AB Testing as one activity or task. However, there are reall
 
 **Data Analysis** – this is where we select a method, or framework, for drawing conclusions from the data we have collected. For most folks running AB Tests online, it will be the classic null significance testing approach. This is the part where we pick statistical significance, calculate the p-values and draw our conclusions.
 
-## The Indirect logic of Significance Testing
+### The Indirect logic of Significance Testing
 
 Sally and Bob are waiting for Jim to pick them up one night after work. While Bob catches a ride with Jim almost every night, this is Sally’s first time. Bob tells Sally that on average he has to wait about 5 minutes for Jim. After about 15 minutes of waiting, Sally is starting to think that maybe Jim isn’t coming to get them. So she asks Bob, ‘Hey, you said Jim is here in 5 minutes on average, how often do you have to wait 15 minutes?’ Bob, replies, ‘don’t worry, with the traffic, it is not uncommon to have wait this long or even a bit longer. I’d say based on experience, a wait like this, or worse, probably happens about 15% of the time.’ Sally relaxes a bit, and they chat about the day while they wait for Jim.
 
 Notice that Sally only asked about the frequency of long wait times. Once she heard that her observed wait time wasn’t too uncommon, she felt more comfortable that Jim was going to show up. What is interesting is what she really wants to know is the probability that Jim is going to stand them up. But this is **NOT** what she learns. Rather, she just knows, given all the times that Jim has picked up Bob, what is the probability is of him being late more than 15 minutes. This indirect, almost contrarian, logic is the essence of the p-value and classical hypothesis testing.
 
-## Back to our Conference
+### Back to our Conference
 
 For the sake of argument, let’s say that the ‘Analytics200’ promotion has a true conversion rate of 0.1, or 10%. In the real world, this true rate is hidden from us – which is why we go and collect samples in the first place – but in our simulation we know it is 0.1\. So each time we send out ‘Analytics200’, approximately 10% sign up.
 
@@ -74,11 +80,11 @@ Extending this idea, rather than taking just one sample of 50 conference prospec
 
 Our simulated results ranged from 2% to 20% and the average conversion rate of our 100 samples was 10.1% – which is remarkably close to the true conversion rate of 10%.
 
-### Amazing Sampling Fact Number 1
+#### Amazing Sampling Fact Number 1
 
 The mean (average) of repeated samples will equal the mean of the population we are sampling from.
 
-### Amazing Sampling Fact Number 2
+#### Amazing Sampling Fact Number 2
 
 Our sample conversion rates will be distributed roughly according to a normal distribution – this means most of the samples will be clustered around the true mean, and samples far from our mean will occur **very infrequently**. In fact, because we know that our samples are distributed roughly normally, we can use the properties of the normal (or students-t) distribution to tell us how surprising a given result is.
 
@@ -95,7 +101,7 @@ We have no control over variability of the population, it is what it is.
 
 However, we can control our sample size. By increasing the sample size we reduce the error and hence can have greater **confidence** that our sample result is going to be close to the true mean.
 
-### Amazing Sampling Fact Number 3
+#### Amazing Sampling Fact Number 3
 
 The spread of our samples decreases as we increase the ‘N’ of each sample. The larger the sample size, the more our samples will be squished together around the true mean.
 
@@ -105,7 +111,7 @@ We can think of the sample size as a sort of control knob that we can turn to in
 
 [![ShrinkingMSE](http://conductrics.zippykid.netdna-cdn.com/wp-content/uploads/2016/02/ShrinkingMSE-1024x440.png)](http://conductrics.zippykid.netdna-cdn.com/wp-content/uploads/2016/02/ShrinkingMSE.png)
 
-### Why Data doesn’t always need to be BIG
+#### Why Data doesn’t always need to be BIG
 
 Economics often takes a beating for not being a real science, and maybe it isn’t ;-). However, it does make at least a few useful statements about the world. One of them is that we should expect, all else equal, that each successive input will have less value than the preceding one. This principle of diminishing marginal returns is at play in our AB Tests.
 
@@ -121,7 +127,7 @@ Now, without getting into more of the nitty gritty, we can think of our test sta
 
 Whew- okay, I know that might seem like TMI, but now that we have covered the basics, we can finally tackle the p-values.
 
-## Assume There is No Difference
+### Assume There is No Difference
 
 Here is how it works. We collect our data for both the ABTesting200, and Analytics200 promotions. But then we pretend that really we ran an A/A test, rather than an A/B test. So we look at the result as if we just presented everyone with the Analytics200 promotion. Because of what we now know about sampling, we know that both groups should be centered on the same mean, and have the same variance – remember we are pretending that both samples are really from the same population (the Analytics200 population). Since we are interested in the difference, we expect that on average, that Analytics200-Analytics200 will be ‘0’, since on average they should have the same mean.
 
@@ -129,7 +135,7 @@ Here is how it works. We collect our data for both the ABTesting200, and Analyti
 
 So using our three facts of sampling we can construct how the imagined A/A Test will be distributed, and we expect that our A/A test, will on average, show no difference between each sample. However, because of the sampling error, we aren’t that surprised when we see values that are near zero, but not quite zero. Again, how surprised we are by the result is determined by how far away from zero our result is. We will use the fact that our data is normally distributed to tell us exactly how probable seeing a result away from zero is. Something way to the right of zero, like at point 3 or greater will have a low probability of occurring.
 
-## Contrarians and the P-Value, Finally!
+### Contrarians and the P-Value, Finally!
 
 The final step is to see where our test statistic falls on this distribution. For many researchers, if it is somewhere between -2 and 2, then that wouldn’t be too surprising to see if we were running an A/A test. However, if we see something on either side of or -2 and 2 then we start getting into fairly infrequent results. One thing to note: what is ‘surprising’ is determined by you, the person running the test. There is no free lunch, at the end of the day, your judgement is still an integral part of the testing process.
 
@@ -141,7 +147,7 @@ Here our test statistic is in the surprising region. The probability of the surp
 
 If our test statistic is in the surprise region, we reject the Null (reject that it was really an A/A test). If the result is within the Not Surprising area, then we Fail to Reject the null. That’s it.
 
-## Conclusion: 7 Points
+### Conclusion: 7 Points
 
 Here are a few important points about p-values that you should keep in mind:
 

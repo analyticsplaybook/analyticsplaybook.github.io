@@ -1,16 +1,22 @@
 ---
-layout: responsive
+
+layout: post
 title: Making Great Bar Charts In R
+date:   2016-04-11
+author: Jowanza Joseph
+category: dataviz
+tags:
+  - r
+  - visualization
+  - charting
 
 ---
 
-# Making Great Bar Charts In R
+### Problem
+As data collection and aggregation grows in an organization, presenting and consuming that data can become a real challenge. A good foundation in visualization eases this burden. Using bar charts effectively can help with sw
 
-Author: Jowanza Joseph
-
-**Problem:** As data collection and aggregation grows in an organization, presenting and consuming that data can become a real challenge. A good foundation in visualization eases this burden. Using bar charts effectively can help with sw
-
-**Actions:** We will walk through an example of how to create a useful and beautiful barchart in R. 
+### Actions
+We will walk through an example of how to create a useful and beautiful barchart in R. 
 
 ### Example
 
@@ -143,7 +149,7 @@ my_theme <- function() {
 Now we have a chart worth sharing.
 
 
-#### References:
+### References:
 
 [ggplot2](http://docs.ggplot2.org/current/)
 
