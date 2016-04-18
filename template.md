@@ -1,15 +1,21 @@
 ---
 
-layout: responsive
-title: <Put Topic Title Here>
+layout: post
+title: <Put topic Title here>
+date:   <Put date of post here>
+author: <Put author of post here>
+category: <Put category (directory wich is the post in) of post here>
+tags:
+  - <Put tags of post here>
+  - <Put tags of post here>
 
 ---
 
-# Topic Title
+### Problem
+State your problem here (concisely)
 
-__Problem__: State your problem here (concisely)
-
-__Actions__: Steps to take in order to solve the problem stated above. This can be in paragraph form, but the idea is not to write an essay, but rather a quick set of points to go from data to answer.
+### Actions
+Steps to take in order to solve the problem stated above. This can be in paragraph form, but the idea is not to write an essay, but rather a quick set of points to go from data to answer.
 
 Bullets (Must have space between heading and bullets):
 
@@ -39,12 +45,12 @@ Everyone is welcome to contribute!
 {% endhighlight %}
 
 
-__Explanation (resolution)__:
+### Explanation (resolution)
 
 Explain why your technique works, the interpretation and the business impact if possible. Again, brevity is key, no one wants to read 10000 word articles!
 
 
 
-#### References
+### References
 [digitalanalyticscookbook.org](digitalanalyticscookbook.org) <br>
 [randyzwitch.com](randyzwitch.com)

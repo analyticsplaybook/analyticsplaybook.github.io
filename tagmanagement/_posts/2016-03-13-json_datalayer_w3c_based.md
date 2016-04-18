@@ -1,13 +1,19 @@
 ---
 
-layout: responsive
+layout: post
 title: JSON Data Layer based on W3C norm
+date:   2016-03-13
+author: Till Buettner
+category: tagmanagement
+tags:
+  - tms
+  - datalayer
+  - w3c
 
 ---
-# JSON Data Layer based on W3C norm
-Author: Till Büttner
 
-__Problem__: Quote from W3C Customer Experience Digital Data Layer:
+### Problem
+Quote from W3C Customer Experience Digital Data Layer:
 
 >"Collection and analysis of visitor behavioral and demographic data has become an integral part of web application design and website success, whether accessed through browsers on laptop, mobile, kiosk, tablet or another device. This data is central to site performance analysis, dynamically tailoring site content to visitor activity and interest and retargeting visitors based on their behaviors.
 >
@@ -15,10 +21,12 @@ __Problem__: Quote from W3C Customer Experience Digital Data Layer:
 become more complex and development cycles have lengthened as different requirements for data surfacing and formatting are added to the implementation process. Further, changing or
 adding vendors sometimes requires that the development team change designs to accommodate vendor-specific requirements. Common data items must be continually surfaced in different ways, and each design requirement is a custom effort."<sup>1</sup> (p. 1)
 
-__Actions__: To get rid of the standard way of collecting data from your website, you can use a structured data layer. For this JSON works well. JSON stands for _JavaScript Object Notation_
+### Actions
+To get rid of the standard way of collecting data from your website, you can use a structured data layer. For this JSON works well. JSON stands for _JavaScript Object Notation_
 and is a lightweight data-interchange format. JSON uses JavaScript syntax, but the JSON format is text only.
 
-__Explanation (resolution)__: First of all think about what kind of data your want to collect. Try to segment them in a way where they belong to.
+###Explanation resolution
+First of all think about what kind of data your want to collect. Try to segment them in a way where they belong to.
 
 * So the page name belongs to the page, same with referrer or server name.
 * Price and product name belongs to the product.
@@ -82,5 +90,5 @@ To get more ideas of what kind of sub-objects you can use, look at page 14 an fo
 
 To get the information out of the JSON, just use a JS object as for example `digitalData.page.pageInfo.pageName` is "Example Page" or `digitalData.product[2].productInfo.productName` is "Canon SLR Camera" in the data layer example above.
 
-#### References
+### References
 <sup>1</sup> [W3C Customer Experience Digital Data Layer](https://www.w3.org/2013/12/ceddl-201312.pdf)

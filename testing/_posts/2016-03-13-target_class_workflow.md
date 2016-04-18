@@ -1,17 +1,25 @@
 ---
 
-layout: responsive
+layout: post
 title: Adobe Target - Classic Workflow
+date:   2016-03-13
+author: Jason Thompson
+category: testing
+tags:
+  - ab-testing
+  - adobetarget
+  - workflow
 
 ---
-# Adobe Target: Classic Workflow
-Author: Jason Thompson
 
-__Problem__: As organizations mature in their use of optimization platforms, such as Adobe Target, keeping tests flowing smoothly through development, QA, and production releases can often become a real challenge.
+### Problem
+As organizations mature in their use of optimization platforms, such as Adobe Target, keeping tests flowing smoothly through development, QA, and production releases can often become a real challenge.
 
-__Actions__: We will walk through sample workflow, using Adobe Target Classic, to illustrate how organizations can run multiple, concurrent, campaigns and still maintain flexibility in managing their testing queue.
+### Actions
+We will walk through sample workflow, using Adobe Target Classic, to illustrate how organizations can run multiple, concurrent, campaigns and still maintain flexibility in managing their testing queue.
 
-__Explanation (resolution)__: Let's begin by creating a new Campaign that will be used for development and QA purposes.
+### Explanation resolution
+Let's begin by creating a new Campaign that will be used for development and QA purposes.
 
 ![Adobe Target - Create New Campaign](/images/target_new_campaign.png)
 
@@ -37,7 +45,7 @@ Once you have this completed and have selected a Conversion Location, you can sa
 
 Now that we have an approved campaign, we can build links that we can distribute to the team to view, QA, and validate the campaign.
 
-**Example**:
+#### Example
 
 Control: http://www.site.com/?campaign=shp&v=control
 Homepage CTA: http://www.site.com/?campaign=shp&v=cta
@@ -59,6 +67,6 @@ Make the following changes to the campaign setup:
 ![Adobe Target - Target Location](/images/target_production_exclude.png)
 
 
-#### References
+### References
 
 [Adobe Target Product Documentation](https://marketing.adobe.com/resources/help/en_US/target/)

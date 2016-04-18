@@ -1,17 +1,23 @@
 ---
 
-layout: responsive
-title: Set and Record Visitor Type with Adobe DTM
+layout: post
+title: Adobe DTM - Set and Record Visitor type
+date:   2016-03-13
+author: Till Buettner
+category: tagmanagement
+tags:
+  - adobedtm
+  - tracking
+  - adobeanalytics
+  - tms
 
 ---
-# Set and Record Visitor type with Adobe DTM
-Author: Till Büttner
 
-__Problem__:
+### Problem
 
 As an analyst you want to segment website visitors. For an eCommerce website, perhaps you want to segment your visitors into prospects, leads and customers. But many times, you just know the type, if a visitor purchased (and thus, becomes a "customer").
 
-__Actions__:
+### Actions
 
 We will set up a data element using custom JavaScript to identify the visitor type. The explanation will be split into a example with a full data layer and one without a data layer. The first approach was a little bit different to the result now. Peter O'Neill outlines this technique in a great L3 Analytics Blog post titled [Understanding your Website Visitors: Prospects vs Customers](http://www.l3analytics.com/2016/01/18/understanding-your-website-visitors-prospects-vs-customers/).
 
@@ -23,9 +29,10 @@ Here is our visitor behavior hierarchy:
 
 This custom script uses `localStorage` and `sessionStorage`, not cookies. What's the difference? Cookies are primarily for reading server-side, whereas local storage can only be read client-side. More information: [What is the difference between localStorage, sessionStorage, session and cookies?](http://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies) And, if you are located in the EU, don't forgett about the [EU's cookie law](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). LocalStorage and sessionStorage are treated as cookies.
 
-__Explanation (resolution)__:
+### Explanation (resolution)
 
-__Data layer available__: Let's begin by creating the data element. Name the data element in reference to the value which it will serve: visitorType. Copy and paste the following javascript into your data layer code:
+#### Data layer available
+Let's begin by creating the data element. Name the data element in reference to the value which it will serve: visitorType. Copy and paste the following javascript into your data layer code:
 
 {% highlight javascript %}
 
@@ -102,7 +109,8 @@ After this, we create three page load rules:
 
 The conditions should be evaluated after the data layer exists in the DOM. As an example, if the data layer is loaded after the opening `<body>` tag, the rule should be triggered at the bottom of page. If you're using Adobe Analytics call, the tracking script should be after these page load rules to avoid two pageviews.
 
-__Data layer not available__: If a data layer is not available, there is a slight change in the first two custom scripts and as you can imagine it will make tracking less accurate.
+#### Data layer not available
+If a data layer is not available, there is a slight change in the first two custom scripts and as you can imagine it will make tracking less accurate.
 
 Custom script for visitorType, the default value is prospect:
 
@@ -140,10 +148,12 @@ return sessionStorage.getItem("ssVisitorType");
 
 The page load rules in your tag manager would be the same.
 
-__View last Words__: Please remember
+#### View last Words
+Please remember:
+
 > The first caveat is that this data will not be, and could never be, 100% accurate. For visitors who are not logged in, it is just not possible to know definitely whether they are an existing customer or a prospect. Your accuracy will improve over time as customers return and can be identified, even if they are not logged in. However, this does not work if they delete their cookie or use a different device. (see Peter O'Neill in "Understanding your Website Visitors")
 
-#### References
+### References
 [Understanding your Website Visitors: Prospects vs CustomersUnderstanding your Website Visitors: Prospects vs Customers](http://www.l3analytics.com/2016/01/18/understanding-your-website-visitors-prospects-vs-customers/) <br>
 [What is the difference between localStorage, sessionStorage, session and cookies?](http://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies) <br>
 [EU's cookie law](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm)
