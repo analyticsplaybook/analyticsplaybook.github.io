@@ -58,8 +58,7 @@ img { max-width: 100%;}
     padding: 12px 0 0 20px;
 }
 .navbar-default .navbar-brand {
-	font-size: 40px;
-    font-weight: 200;
+	font-size: 1.6em;
     color: #fff;
 }
 .navbar-default .navbar-brand:hover {
@@ -67,6 +66,20 @@ img { max-width: 100%;}
 }
 .navbar-default .navbar-nav>li>a {
 	color: #fff;
+}
+
+#bs-example-navbar-collapse-1 {
+    background: #e7e7e7;
+}
+#bs-example-navbar-collapse-1 .navbar-nav {
+    margin: 0 40px 10px 15px;
+}
+#bs-example-navbar-collapse-1 li a {
+    color: #888;
+    border-bottom: 1px solid #888;
+}
+#bs-example-navbar-collapse-1 li:last-of-type a {
+    border-bottom: none;
 }
 
 /*  Sidebar  */
@@ -127,4 +140,26 @@ img { max-width: 100%;}
 }
 #results p {
     font-size: 1.1em;
+}
+
+.col-md-3 { margin-bottom: 20px; }
+
+/* Medium devices (desktops, 992px and up) */
+@media(min-width:768px) { 
+	#bs-example-navbar-collapse-1 {
+		background: none;
+	}
+	#bs-example-navbar-collapse-1 .navbar-nav {
+		margin: 0;
+	}
+	#bs-example-navbar-collapse-1 li a {
+		color: inherit;
+		border-bottom: none;
+	}
+}
+@media(min-width:992px) { 
+	.navbar-default .navbar-brand {
+		font-size: 40px;
+		font-weight: 200;
+	}
 }
