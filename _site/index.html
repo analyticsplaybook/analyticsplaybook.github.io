@@ -207,20 +207,19 @@
 			
 			</div>
 			<div class="col-md-9">
-				<div class="blog-index">  
-  
-  
-  <h1 class="entry-title">
+				<!-- This loops through the paginated posts -->
+
+<h1 class="entry-title">
 
     <a href="/dataviz/bar_charts.html">Making Great Bar Charts In R</a>
 
 </h1>
-<div class="entry-content">
-    <div id="meta-content">
-        <div class="post-meta small">
-            Jowanza Joseph &times; <a href="/index.html">April 11, 2016</a> &times; dataviz
-        </div>
-    </div>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Jowanza Joseph &times; <a href="/index.html">April 11, 2016</a> &times; dataviz
+      </div>
+  </div>
+  <div class="content">
     <h3 id="problem">Problem</h3>
 <p>As data collection and aggregation grows in an organization, presenting and consuming that data can become a real challenge. A good foundation in visualization eases this burden. Using bar charts effectively can help with sw</p>
 
@@ -359,9 +358,159 @@ my_theme <span class="o">&lt;-</span> <span class="kr">function</span><span clas
 <p><a href="http://minimaxir.com/2015/02/ggplot-tutorial/">Max Woolf</a></p>
 
 
+    <hr>
+  </div>
+
+<h1 class="entry-title">
+
+    <a href="/tagmanagement/adobe_dtm_previous_page_name.html">Adobe DTM - Previous Page Name</a>
+
+</h1>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Till Buettner &times; <a href="/index.html">March 30, 2016</a> &times; tagmanagement
+      </div>
+  </div>
+  <div class="content">
+    <h3 id="problem">Problem</h3>
+
+<p>You want to track the previous page name via Adobe DTM but you can’t use a Plugin (getPreviousValue).</p>
+
+<h3 id="actions">Actions</h3>
+
+<p>You can use Session Storage to track the previous page name.</p>
+
+<h3 id="explanation-resolution">Explanation (resolution)</h3>
+
+<p>You need two Page Load Rules (PLR) to track the previous page name. First PLR:</p>
+
+<ul>
+  <li>Name: Save prior page name to session storage</li>
+  <li>Trigger Rule at “DOM Ready”</li>
+  <li>Rule Condition: Path “.*” (regex enabled)</li>
+  <li>Custom Code “None-Sequential Javascript”:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">Storage</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">!==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">pagename</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">pageName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Second PLR:</p>
+
+<ul>
+  <li>Name: Save prior page name to prop</li>
+  <li>Trigger Rule at “Bottom of Page”</li>
+  <li>Rule Condition: Path “.*” (regex enabled)</li>
+  <li>Rule Condition - Custom:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">Storage</span><span class="p">)</span> <span class="o">!==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;pagename&quot;</span><span class="p">))</span> <span class="o">===</span> <span class="s2">&quot;string&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">prevPageName</span> <span class="o">=</span> <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;pagename&quot;</span><span class="p">);</span>
+    <span class="nx">_satellite</span><span class="p">.</span><span class="nx">setVar</span><span class="p">(</span><span class="s2">&quot;previousPage&quot;</span><span class="p">,</span><span class="nx">prevPageName</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<ul>
+  <li>Adobe Analytics: prop2 set as %previousPage% //Or any other prop you want to use, just enable pathing on it.</li>
+</ul>
+
+<p>There you go, the previous pageName is implemented.</p>
+
+<h3 id="references">References</h3>
+<p><a href="http://apastebin.tumblr.com/post/139627646180/adobe-analytics-dtm-previous-pagename">Previous page name - apastebin</a></p>
+
+    <hr>
+  </div>
+
+<h1 class="entry-title">
+
+    <a href="/tagmanagement/adobe_dtm_console_messages.html">Adobe DTM - Using Browser Console Messages</a>
+
+</h1>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Jason Thompson &times; <a href="/index.html">March 30, 2016</a> &times; tagmanagement
+      </div>
+  </div>
+  <div class="content">
+    <h3 id="problem">Problem</h3>
+<p>Error messaging, or messaging in general, is often overlooked in the development process causing difficulties in debugging and managing code deployed by a TMS.</p>
+
+<h3 id="actions">Actions</h3>
+<p>You can leverage a function called <code>_satellite.notify()</code>, a cross browser supported function, contained within DTM to send informative messages to the browser console. This is especially helpful when deploying 3rd party scripts.</p>
+
+<h3 id="explanation-resolution">Explanation (resolution)</h3>
+
+<p>At it’s most basic level, <code>_satellite.notify()</code> takes two arguments to send a message to the browser console:</p>
+
+<ul>
+  <li>Descriptive message text</li>
+  <li>Numeric level of intensity</li>
+</ul>
+
+<p>Let’s use a working example to understand how we can use <code>_satellite.notify()</code> to send messages to the browser about the status of a 3rd party marketing pixel.</p>
+
+<h4 id="intensity-1---a-message-that-the-pixel-fired">Intensity 1 - A message that the pixel fired</h4>
+<p><code>_satellite.notify("DoubleClick tag fired.", 1);</code>
+<img src="/images/dtm_notify_1.png" alt="DTM Level 1 Notification" /></p>
+
+<h4 id="intensity-3---a-message-about-the-end-of-the-campaign">Intensity 3 - A message about the end of the campaign</h4>
+<p><code>_satellite.notify("The DoubleClick campaign ends in 5 days.", 3);</code>
+<img src="/images/dtm_notify_3.png" alt="DTM Level 3 Notification" /></p>
+
+<h4 id="intensity-4---a-message-that-the-campaign-has-ended">Intensity 4 - A message that the campaign has ended</h4>
+<p><code>_satellite.notify("The DoubleClick campaign has ended. Please remove the pixel from Adobe DTM.", 4);</code>
+<img src="/images/dtm_notify_4.png" alt="DTM Level 4 Notification" /></p>
+
+<h4 id="intensity-5---a-message-alerting-a-critical-issue">Intensity 5 - A message alerting a critical issue</h4>
+<p><code>_satellite.notify("The DoubleClick servers are taking longer than 3 seconds to respond.", 5);</code>
+<img src="/images/dtm_notify_5.png" alt="DTM Level 5 Notification" /></p>
+
+<h3 id="references">References</h3>
+<p><a href="http://33sticks.com/avoid-the-marketing-pixel-wasteland/">Avoid the Marketing Pixel Wasteland</a></p>
+
+    <hr>
+  </div>
+
+
+<!-- Pagination links -->
+
+<div class="pagination">
+  
+    <span>&laquo; Prev</span>
+  
+
+  
+    
+       1
+    
+  
+    
+      <a href="/page2">2</a>
+    
+  
+    
+      <a href="/page3">3</a>
+    
+  
+    
+      <a href="/page4">4</a>
+    
+  
+    
+      <a href="/page5">5</a>
+    
+  
+
+  
+    <a href="/page2">Next &raquo;</a>
+  
 </div>
 
-</div>
 
 				<div id="tweet">
 					<a href="https://twitter.com/share" class="twitter-share-button" data-via="APlaybookOrg" data-size="large" data-hashtags="measure">Tweet</a>

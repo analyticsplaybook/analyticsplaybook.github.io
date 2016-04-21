@@ -10,3 +10,5 @@ permalink: /:categories/:title.html
 name: Analytics Playbook
 description: An Open Source Repository for Analytical Techniques.
 url: http://analyticsplaybook.org
+
+paginate: 3

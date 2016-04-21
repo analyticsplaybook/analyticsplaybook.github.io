@@ -142,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-coffeescript
+  jekyll-paginate
   jekyll-seo-tag
 
 BUNDLED WITH
