@@ -157,6 +157,10 @@
 								
 									
 									  
+										<li data-section='/api/stattleship.html'><a href='/api/stattleship.html'>Stop Scraping - Analyzing Sports Data Using Stattleship</a></li>
+									  
+									
+									  
 										<li data-section='/api/python_groupby.html'><a href='/api/python_groupby.html'>Aggregate Sales Data using Python</a></li>
 									  
 									
@@ -208,6 +212,145 @@
 			</div>
 			<div class="col-md-9">
 				<!-- This loops through the paginated posts -->
+
+<h1 class="entry-title">
+
+    <a href="/api/stattleship.html">Stop Scraping - Analyzing Sports Data Using Stattleship</a>
+
+</h1>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Tanya Cashorali &times; <a href="/index.html">April 20, 2016</a> &times; api
+      </div>
+  </div>
+  <div class="content">
+    <h3 id="problem">Problem</h3>
+
+<p>You love sports. You love data. If you’ve ever gone on an epic journey in search of sports data, you’ve probably resorted to scraping data from sites like <a href="www.ESPN.com">ESPN</a> or <a href="http://www.baseball-reference.com/">Baseball Reference</a> and have spent countless hours writing Python code to use the powerful web scraping library <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a>. Maybe you even have a nice <a href="https://github.com/seemethere/nba_py">Python client</a> that scrapes <a href="http://stats.nba.com">stats.nba.com</a> or you wrote an <a href="https://github.com/BillPetti/baseballr">R package</a> to scrape Baseball Reference.</p>
+
+<p>However, we all know that websites get redesigned, formats change and sometimes access to specific stats is revoked (e.g. the NBA did this with <a href="http://stats.nba.com/help/whatsnew/">player movement tracking</a> but attributes it to ‘technical difficulties’). Suddenly, you are scrambling to update your scraping code in order to account for a few new divs or other elements on the web page that were renamed.</p>
+
+<h3 id="actions">Actions</h3>
+<p>This is where the Stattleship API comes to the rescue. We’ve built an easy-to-access set of sports data, stats and accomplishments for multiple sports (and expanding). We’ve partnered with Gracenote to provide all of our NFL, NBA, NHL and MLB game data. Our service is designed for creative fans who want to use Stattleship data to build sports apps that scale.</p>
+
+<p>We’ve cleaned, structured, and categorized all of the box score, player stats and game log data for you. We’ve even quantified specific performances and feats so that you can quickly identify whether a stat is a common-place occurrence or a record-breaking achievement.</p>
+
+<p>In this tutorial, we will show you how to use our R wrapper to access live and up-to-date sports data via the Stattleship API. There is also a Ruby gem for all of you Rubyists: <a href="https://github.com/stattleship/stattleship-ruby">https://github.com/stattleship/stattleship-ruby</a></p>
+
+<h3 id="example">Example</h3>
+<p>There are a few main endpoints that we will focus on. They are as follows:</p>
+
+<ul>
+  <li><b>games</b> - <i>contains game information such as date, attendance, scoreline, etc.</i></li>
+  <li><b>players</b>- <i>contains player information such as name, position, draft round, school, salary, weight, birthday, etc.</i></li>
+  <li><b>teams</b> - <i>contains team information such as name, division, colors, hashtags, etc.</i></li>
+  <li><b>game_logs</b> - <i>contains player-level game log information such as Kevin Durant’s assists from a specific game, total minutes played, etc.</i></li>
+  <li><b>team_game_logs</b> - <i>contains team-level game log information such as total points, rebounds and turnovers by the Boston Celtics in a specific game</i></li>
+</ul>
+
+<p>Here’s a basic Entity-Relationship Diagram outlining how these objects relate to one another:</p>
+
+<p><img src="/images/stattleship_erd.png" alt="" /></p>
+
+<p>In order to get started, sign up for a free API token from <a href="https://www.stattleship.com">here</a>. Now load up <a href="https://www.rstudio.com/">RStudio</a> and start following along! The first few lines of this R script will install the <a href="https://github.com/stattleship/stattleship-r">R package</a> from Github to your machine:</p>
+
+<p>(If you don’t have <code>devtools</code> installed you will have to install that first.)</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
+devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">&quot;stattleship/stattleship-r&quot;</span><span class="p">)</span>
+
+<span class="c1">## Load the stattleshipR package</span>
+<span class="kn">library</span><span class="p">(</span>stattleshipR<span class="p">)</span></code></pre></div>
+
+<p>Next you need to set your API token in the R environment:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Get your free token from www.stattleship.com</span>
+set_token<span class="p">(</span><span class="s">&quot;your-API-token-goes-here&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>Now we need to specify the sport, league and endpoint we are interested in. In this case we will fetch all MLB regular season game logs for the Red Sox to date. This is as easy as setting three parameters: <code>sport</code>, <code>league</code> and <code>ep</code> for endpoint.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">sport <span class="o">&lt;-</span> <span class="s">&#39;baseball&#39;</span>
+league <span class="o">&lt;-</span> <span class="s">&#39;mlb&#39;</span>
+ep <span class="o">&lt;-</span> <span class="s">&#39;game_logs&#39;</span></code></pre></div>
+
+<p>This last parameter, called <code>q_body</code> is where we can set more granular options such as requesting a specific team, stat, player or season.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">q_body <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span>team_id<span class="o">=</span><span class="s">&#39;mlb-bos&#39;</span><span class="p">,</span> status<span class="o">=</span><span class="s">&#39;ended&#39;</span><span class="p">,</span> interval_type<span class="o">=</span><span class="s">&#39;regularseason&#39;</span><span class="p">)</span></code></pre></div>
+
+<p>Now that all of our parameters are set, we can use <code>ss_get_result</code> to send our request to the Stattleship API. Notice the <code>walk=TRUE</code> option. This ensures that the request will walk through all pages of results and return everything. Results are returned 40 rows per page.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">gls <span class="o">&lt;-</span> ss_get_result<span class="p">(</span>sport<span class="o">=</span>sport<span class="p">,</span> league<span class="o">=</span>league<span class="p">,</span> ep<span class="o">=</span>ep<span class="p">,</span> query<span class="o">=</span>q_body<span class="p">,</span> walk<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span></code></pre></div>
+
+<p>We now have a list in R that has 5 elements (there were 5 pages of results returned).</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="o">&gt;</span> <span class="kp">length</span><span class="p">(</span>gls<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">5</span></code></pre></div>
+
+<p>We want to combine all of the pages of results into one <code>data.frame</code>:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">game_logs<span class="o">&lt;-</span><span class="kp">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span> <span class="kp">lapply</span><span class="p">(</span>gls<span class="p">,</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> x<span class="o">$</span>game_logs<span class="p">))</span></code></pre></div>
+
+<p>Let’s check out all of the data we now have access to from yesterday’s games:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">colnames</span><span class="p">(</span>game_logs<span class="p">)</span></code></pre></div>
+
+<p><img src="/images/Screen-Shot-2016-04-19-at-2-52-14-PM-1.png" alt="" /></p>
+
+<p>Wow, over 80 variables for each player including strikeouts, walks, doubles, runs, and more.</p>
+
+<p>I want to include player information into this data set though so I have more than just <code>player_ids</code>. Let’s retrieve all Boston Red Sox players by changing the <code>ep</code> to <code>players</code> and pass <code>team_id='mlb-bos</code> into the options list.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">sport <span class="o">&lt;-</span> <span class="s">&#39;baseball&#39;</span>  
+league <span class="o">&lt;-</span> <span class="s">&#39;mlb&#39;</span>  
+ep <span class="o">&lt;-</span> <span class="s">&#39;players&#39;</span>  
+q_body <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span>team_id<span class="o">=</span><span class="s">&#39;mlb-bos&#39;</span><span class="p">)</span>
+
+pls <span class="o">&lt;-</span> ss_get_result<span class="p">(</span>sport<span class="o">=</span>sport<span class="p">,</span> league<span class="o">=</span>league<span class="p">,</span> ep<span class="o">=</span>ep<span class="p">,</span> query<span class="o">=</span>q_body<span class="p">,</span> walk<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>  
+players<span class="o">&lt;-</span><span class="kp">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span> <span class="kp">lapply</span><span class="p">(</span>pls<span class="p">,</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> x<span class="o">$</span>players<span class="p">))</span></code></pre></div>
+
+<p>In order to merge the two data.frames we can simply rename the <code>id</code> column to <code>player_id</code> so we can use <code>merge</code> in R like this:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">colnames</span><span class="p">(</span>players<span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;player_id&#39;</span>
+game_logs <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>players<span class="p">,</span> game_logs<span class="p">,</span> by<span class="o">=</span><span class="s">&#39;player_id&#39;</span><span class="p">)</span></code></pre></div>
+
+<p>Now let’s do some basic player calculations using <code>dplyr</code>.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&#39;dplyr&#39;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+
+<span class="c1">## Only include game_logs where a player actually played the game, calculate mean batting average,</span>
+<span class="c1">## total runs, total bases and pull in salary info</span>
+stats <span class="o">&lt;-</span>
+  game_logs <span class="o">%&gt;%</span>
+  filter<span class="p">(</span>game_played <span class="o">==</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  group_by<span class="p">(</span>name<span class="p">)</span> <span class="o">%&gt;%</span>
+  summarise<span class="p">(</span>totalRuns <span class="o">=</span> <span class="kp">sum</span><span class="p">(</span>runs<span class="p">),</span> meanBA <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>batting_average<span class="p">),</span> totalBases<span class="o">=</span><span class="kp">sum</span><span class="p">(</span>total_bases<span class="p">),</span> salary<span class="o">=</span><span class="kp">max</span><span class="p">(</span>salary<span class="p">))</span></code></pre></div>
+
+<p><img src="/images/Screen-Shot-2016-04-19-at-3-24-14-PM.png" alt="" /></p>
+
+<p>Good! Now let’s plot it all using <code>ggplot2</code>.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>stats<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>totalRuns<span class="p">,</span> y<span class="o">=</span>meanBA<span class="p">,</span> size<span class="o">=</span>totalBases<span class="p">,</span> label<span class="o">=</span>name<span class="p">,</span> color<span class="o">=</span>salary<span class="p">))</span> <span class="o">+</span> geom_text<span class="p">()</span></code></pre></div>
+
+<p>This plot actually enables us to visualize 4 different variables at once. The x and y axes display total runs and mean batting average, the size of the labels indicate how many total bases the player has had, and the color indicates salary. Xander Bogaerts and Travis Shaw are looking like quite a bargain at this point in the season already.
+<img src="/images/redsox.png" alt="" /></p>
+
+<p>Let us know if you build anything cool with this awesome sports data API! We also welcome contributions to our R wrapper via <a href="https://github.com/stattleship/stattleship-r">pull requests in Github</a>. We have a <a href="https://fanboat.stattleship.com/">public Slack channel</a> as well where you can join us to talk sports, data, get R or Stattleship API help, and provide feedback.</p>
+
+<h3 id="references--other-examples">References / Other Examples</h3>
+
+<ul>
+  <li><a href="https://gist.github.com/tcash21/3a3b103386e1115aee6aa6ea6add072a">Full R script from this post</a></li>
+  <li><a href="developers.stattleship.com">Stattleship API documentation</a></li>
+  <li><a href="https://oglethorpe.stattleship.com/photos?photo_type=CurrentWinningStreakPhoto">Oglethorpe, stat infographics otherwise known as StatShots</a></li>
+  <li><a href="http://104.131.198.150:3838/statship-app/">NFL Yardage by Team 2015</a></li>
+  <li><a href="https://tcb-analytics.shinyapps.io/dfsoptimize/">Fanduel NBA Optimizer</a></li>
+  <li><a href="https://github.com/stattleship/glickman">Glickman Statmoji slackbot</a></li>
+  <li><a href="http://blog.stattleship.com">Stattleship Blog</a></li>
+</ul>
+
+    <hr>
+  </div>
 
 <h1 class="entry-title">
 
@@ -422,56 +565,6 @@ my_theme <span class="o">&lt;-</span> <span class="kr">function</span><span clas
 
 <h3 id="references">References</h3>
 <p><a href="http://apastebin.tumblr.com/post/139627646180/adobe-analytics-dtm-previous-pagename">Previous page name - apastebin</a></p>
-
-    <hr>
-  </div>
-
-<h1 class="entry-title">
-
-    <a href="/tagmanagement/adobe_dtm_console_messages.html">Adobe DTM - Using Browser Console Messages</a>
-
-</h1>
-  <div id="meta-content">
-      <div class="post-meta small">
-          Jason Thompson &times; <a href="/index.html">March 30, 2016</a> &times; tagmanagement
-      </div>
-  </div>
-  <div class="content">
-    <h3 id="problem">Problem</h3>
-<p>Error messaging, or messaging in general, is often overlooked in the development process causing difficulties in debugging and managing code deployed by a TMS.</p>
-
-<h3 id="actions">Actions</h3>
-<p>You can leverage a function called <code>_satellite.notify()</code>, a cross browser supported function, contained within DTM to send informative messages to the browser console. This is especially helpful when deploying 3rd party scripts.</p>
-
-<h3 id="explanation-resolution">Explanation (resolution)</h3>
-
-<p>At it’s most basic level, <code>_satellite.notify()</code> takes two arguments to send a message to the browser console:</p>
-
-<ul>
-  <li>Descriptive message text</li>
-  <li>Numeric level of intensity</li>
-</ul>
-
-<p>Let’s use a working example to understand how we can use <code>_satellite.notify()</code> to send messages to the browser about the status of a 3rd party marketing pixel.</p>
-
-<h4 id="intensity-1---a-message-that-the-pixel-fired">Intensity 1 - A message that the pixel fired</h4>
-<p><code>_satellite.notify("DoubleClick tag fired.", 1);</code>
-<img src="/images/dtm_notify_1.png" alt="DTM Level 1 Notification" /></p>
-
-<h4 id="intensity-3---a-message-about-the-end-of-the-campaign">Intensity 3 - A message about the end of the campaign</h4>
-<p><code>_satellite.notify("The DoubleClick campaign ends in 5 days.", 3);</code>
-<img src="/images/dtm_notify_3.png" alt="DTM Level 3 Notification" /></p>
-
-<h4 id="intensity-4---a-message-that-the-campaign-has-ended">Intensity 4 - A message that the campaign has ended</h4>
-<p><code>_satellite.notify("The DoubleClick campaign has ended. Please remove the pixel from Adobe DTM.", 4);</code>
-<img src="/images/dtm_notify_4.png" alt="DTM Level 4 Notification" /></p>
-
-<h4 id="intensity-5---a-message-alerting-a-critical-issue">Intensity 5 - A message alerting a critical issue</h4>
-<p><code>_satellite.notify("The DoubleClick servers are taking longer than 3 seconds to respond.", 5);</code>
-<img src="/images/dtm_notify_5.png" alt="DTM Level 5 Notification" /></p>
-
-<h3 id="references">References</h3>
-<p><a href="http://33sticks.com/avoid-the-marketing-pixel-wasteland/">Avoid the Marketing Pixel Wasteland</a></p>
 
     <hr>
   </div>
