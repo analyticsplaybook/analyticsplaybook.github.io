@@ -1,4 +1,3 @@
-<!-- Theme forked by https://github.com/driftyco/jetstrap-docs -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,28 +8,25 @@
 	<meta name="google-site-verification" content="jb8G-OKpGcofrmBS1UMKipsicRCLsh6qlYqI8vfi_6s" />
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Le styles -->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <!-- styles -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <style>
       body { padding-top: 60px; /* 60px to make the container go all the way
       to the bottom of the topbar */ }
     </style>
-    <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="/assets/css/docs.css" rel="stylesheet">
     <link href="/assets/css/custom.css" rel="stylesheet">
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
       </script>
     <![endif]-->
-    <!-- Le fav and touch icons -->
+    <!-- fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
-    <style>
-    </style>
     <!-- Adobe DTM Library -->
     <script src="//assets.adobedtm.com/0cc0e010ce8e1e1377a4055fc7a51f61b47d14dc/satelliteLib-365bfb734a97fe5729197abcd7095108eec22654.js"></script>
 	<script type="text/javascript">
@@ -44,185 +40,344 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a href="/" class="brand">Analytics Playbook</a>
-          <ul class="nav pull-right">
-			<li><a href="/how_to_submit.html" target="_blank">How To Submit An Article</a></li>
-            <li><a href="/README.html">About</a></li>
-            <li><a href="https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io" target="_blank">Fork This!</a></li>
-			<li><a href="/feed.xml" target="_blank"><img src="/images/feed-icon-14x14.png" title="RSS Feed" alt="RSS Feed" /></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+	<body class="default-page">
     <div class="container">
-      <div class="row">
-        <div class="span3">
-          <ul id="menu" class="nav nav-list" data-spy="affix">
+				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
 
-            
-            <li class="nav-header">testing</li>
-              
-                
-                  
-                
-              
-                
-                  
-                    <li data-section='/testing/2016/03/13/target_class_workflow.html'><a href='/testing/2016/03/13/target_class_workflow.html'>Adobe Target - Classic Workflow</a></li>
-                  
-                
-                  
-                    <li data-section='/testing/2016/03/13/intro_to_ab_testing.html'><a href='/testing/2016/03/13/intro_to_ab_testing.html'>Introduction to AB Testing and P-Values</a></li>
-                  
-                
-                  
-                    <li data-section='/testing/2016/03/13/conductrics_setup_abtest_intro.html'><a href='/testing/2016/03/13/conductrics_setup_abtest_intro.html'>Conductrics - Intro to Page Editing for Simple A-B Testing</a></li>
-                  
-                
-              
-            </li>
-          
-            <li class="nav-header">tagmanagement</li>
-              
-                
-                  
-                
-              
-                
-                  
-                    <li data-section='/tagmanagement/2016/03/30/adobe_dtm_previous_page_name.html'><a href='/tagmanagement/2016/03/30/adobe_dtm_previous_page_name.html'>Adobe DTM - Previous Page Name</a></li>
-                  
-                
-                  
-                    <li data-section='/tagmanagement/2016/03/30/adobe_dtm_console_messages.html'><a href='/tagmanagement/2016/03/30/adobe_dtm_console_messages.html'>Adobe DTM - Using Browser Console Messages</a></li>
-                  
-                
-                  
-                    <li data-section='/tagmanagement/2016/03/13/set_record_visitors_type_adobe_dtm.html'><a href='/tagmanagement/2016/03/13/set_record_visitors_type_adobe_dtm.html'>Set and Record Visitor Type with Adobe DTM</a></li>
-                  
-                
-                  
-                    <li data-section='/tagmanagement/2016/03/13/json_datalayer_w3c_based.html'><a href='/tagmanagement/2016/03/13/json_datalayer_w3c_based.html'>JSON Data Layer based on W3C norm</a></li>
-                  
-                
-              
-            </li>
-          
-            <li class="nav-header">api</li>
-              
-                
-                  
-                
-              
-                
-                  
-                    <li data-section='/api/2016/03/20/python_groupby.html'><a href='/api/2016/03/20/python_groupby.html'>Aggregate Sales Data using Python</a></li>
-                  
-                
-                  
-                    <li data-section='/api/2016/03/13/real-time-adobe-analytics-api-tutorial.html'><a href='/api/2016/03/13/real-time-adobe-analytics-api-tutorial.html'>Real-Time Reporting Adobe Analytics API Tutorial</a></li>
-                  
-                
-                  
-                    <li data-section='/api/2016/03/13/python_identify_duplicate_data.html'><a href='/api/2016/03/13/python_identify_duplicate_data.html'>Identifying Duplicate Sales Data using Python</a></li>
-                  
-                
-                  
-                    <li data-section='/api/2016/03/13/learn_sql_30_minutes.html'><a href='/api/2016/03/13/learn_sql_30_minutes.html'>Learn SQL in 30 Minutes Using R and sqldf</a></li>
-                  
-                
-              
-            </li>
-          
-            <li class="nav-header">dataviz</li>
-              
-                
-                  
-                
-              
-                
-                  
-                    <li data-section='/dataviz/2016/04/11/bar_charts.html'><a href='/dataviz/2016/04/11/bar_charts.html'>Making Great Bar Charts In R</a></li>
-                  
-                
-                  
-                    <li data-section='/dataviz/2016/03/13/statebin.html'><a href='/dataviz/2016/03/13/statebin.html'>Visualizing State Level Data With R and Statebins</a></li>
-                  
-                
-              
-            </li>
-          
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand">Analytics Playbook</a>
+				</div>
 
-          </ul>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="/search.html">Search</a>
+						</li>
+						<li>
+							<a href="/how_to_submit.html">How To Submit An Article</a>
+						</li>
+						<li>
+							<a href="/about.html">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io" target="_blank">Fork This!</a>
+						</li>
+						<li>
+							<a href="/feed.xml"><img src="/images/feed-icon-14x14.png" title="RSS Feed" alt="RSS Feed" /></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="row">
+			<div class="col-md-3">
+						
+				<div class="panel-group" id="panel-testing">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-testing" href="#testing">testing</a>
+						</div>
+						<div id="testing" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+									
+									  
+									
+								
+									
+									  
+										<li data-section='/testing/target_class_workflow.html'><a href='/testing/target_class_workflow.html'>Adobe Target - Classic Workflow</a></li>
+									  
+									
+									  
+										<li data-section='/testing/intro_to_ab_testing.html'><a href='/testing/intro_to_ab_testing.html'>Introduction to AB Testing and P-Values</a></li>
+									  
+									
+									  
+										<li data-section='/testing/conductrics_setup_abtest_intro.html'><a href='/testing/conductrics_setup_abtest_intro.html'>Conductrics - Intro to Page Editing for Simple A-B Testing</a></li>
+									  
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="panel-group" id="panel-tagmanagement">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-tagmanagement" href="#tagmanagement">tagmanagement</a>
+						</div>
+						<div id="tagmanagement" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+									
+									  
+									
+								
+									
+									  
+										<li data-section='/tagmanagement/adobe_dtm_previous_page_name.html'><a href='/tagmanagement/adobe_dtm_previous_page_name.html'>Adobe DTM - Previous Page Name</a></li>
+									  
+									
+									  
+										<li data-section='/tagmanagement/adobe_dtm_console_messages.html'><a href='/tagmanagement/adobe_dtm_console_messages.html'>Adobe DTM - Using Browser Console Messages</a></li>
+									  
+									
+									  
+										<li data-section='/tagmanagement/set_record_visitors_type_adobe_dtm.html'><a href='/tagmanagement/set_record_visitors_type_adobe_dtm.html'>Adobe DTM - Set and Record Visitor type</a></li>
+									  
+									
+									  
+										<li data-section='/tagmanagement/json_datalayer_w3c_based.html'><a href='/tagmanagement/json_datalayer_w3c_based.html'>JSON Data Layer based on W3C norm</a></li>
+									  
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="panel-group" id="panel-api">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-api" href="#api">api</a>
+						</div>
+						<div id="api" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+									
+									  
+									
+								
+									
+									  
+										<li data-section='/api/python_groupby.html'><a href='/api/python_groupby.html'>Aggregate Sales Data using Python</a></li>
+									  
+									
+									  
+										<li data-section='/api/real-time-adobe-analytics-api-tutorial.html'><a href='/api/real-time-adobe-analytics-api-tutorial.html'>Real-Time Reporting Adobe Analytics API Tutorial</a></li>
+									  
+									
+									  
+										<li data-section='/api/python_identify_duplicate_data.html'><a href='/api/python_identify_duplicate_data.html'>Identifying Duplicate Sales Data using Python</a></li>
+									  
+									
+									  
+										<li data-section='/api/learn_sql_30_minutes.html'><a href='/api/learn_sql_30_minutes.html'>Learn SQL in 30 Minutes Using R and sqldf</a></li>
+									  
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="panel-group" id="panel-dataviz">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-dataviz" href="#dataviz">dataviz</a>
+						</div>
+						<div id="dataviz" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+									
+									  
+									
+								
+									
+									  
+										<li data-section='/dataviz/bar_charts.html'><a href='/dataviz/bar_charts.html'>Making Great Bar Charts In R</a></li>
+									  
+									
+									  
+										<li data-section='/dataviz/statebin.html'><a href='/dataviz/statebin.html'>Visualizing State Level Data With R and Statebins</a></li>
+									  
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			<div class="col-md-9">
+				<div class="blog-index">  
+  
+  
+  <h1 class="entry-title">
+
+    <a href="/dataviz/bar_charts.html">Making Great Bar Charts In R</a>
+
+</h1>
+<div class="entry-content">
+    <div id="meta-content">
+        <div class="post-meta small">
+            Jowanza Joseph &times; <a href="/index.html">April 11, 2016</a> &times; dataviz
         </div>
-        <div class="span9">
-			<h1 id="analytics-playbookbran-open-source-repository-for-analytical-techniques">Analytics Playbook:<br />An Open Source Repository for Analytical Techniques</h1>
-
-<blockquote>
-  <p>If you have knowledge, let others light their candles in it.
-<a href="http://www.newyorker.com/magazine/2013/04/01/an-unfinished-woman">- Margaret Fuller (1810 - 1850)</a></p>
-</blockquote>
-
-<h2 id="project-goals">Project Goals</h2>
-
-<p>The aim of this project is simple: <em>information deserves to be free</em>.</p>
-
-<p>The “analytics” industry is no longer a community of like-minded analysts, sharing techniques and lifting each other up. Now, it’s just vendors and consultants writing advertisements about how they can “help” you (assuming you’re willing to fill out a lead-gen form, for no more details than thinly-veiled sales pitch). Gone are the days where people shared analysis techniques, provided code snippets or even wrote JavaScript plugins and gave them away to the community; now it’s just multi-thousand dollar conferences, where the speakers do nothing more than ape the knowledge that can be learned freely from a Tufte book, or from an (un-sourced) blog post.</p>
-
-<p>It’s 2016, we can do better! For the cost of $20 for a domain name and an hours time, this website was created. Now, it’s time to start being that open, welcoming industry again.</p>
-
-<h2 id="contributing">Contributing</h2>
-
-<p>The aim of this site is to provide simple, “one-pager” style articles following a “Problem-Action-Resolution” framework:</p>
-
-<ul>
-  <li>State a bite-sized business problem/question</li>
-  <li>Show how you solved the problem/question</li>
-  <li>EXPLAIN why the solution works (with business impact if possible)</li>
-</ul>
-
-<p>It’s clearly not always feasible to use actual data, but where possible, using a generated or anonymized dataset will always help with understanding or will be highly valued by the community.</p>
-
-<p>While authors should feel free to link back to their own sites as necessary (such as for expanding upon a topic beyond the limited “one-page” style of this site), this is not intended to be a link farm. Submitting just links, or half-written teasers to link to other sites will be <strong>deleted/rejected</strong>. Otherwise, there are no restrictions on who may post, as long as it is useful to the community (beginner through expert-level).</p>
-
-<p>Submissions will be made using GitHub, using <a href="https://guides.github.com/features/mastering-markdown/#syntax">GitHub-flavored Markdown</a>. By using GitHub, this project can truly be a community affair; not only can anyone create a GitHub account for free, but articles will be able to be edited by anyone via pull request (subject to community discussion/approval).</p>
-
-<p>A <a href="https://raw.githubusercontent.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/master/template.md">template</a> is provided for convenience. Markdown takes a little bit of getting used to, but ultimately it’s a great plain-text format, while still allowing for rich display of content. A simple submission could just be to place a Markdown file in the directory of your topic, making sure to set a category in the header so that the post is automatically placed under the proper heading.</p>
-
-<h2 id="github-resources">GitHub Resources</h2>
-
-<p>Since not everyone has experience with GitHub, here are some useful links:</p>
-
-<ul>
-  <li><a href="https://github.com/">GitHub Account Signup</a></li>
-  <li><a href="https://git-scm.com/downloads">GitHub GUI Clients</a></li>
-  <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">Git Basics</a></li>
-</ul>
-
-<p>If you would like to contribute, have tried to use GitHub and are still stuck, there is also an <a href="http://analyticsplaybook.org/how_to_submit.html">email option</a>.</p>
-
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="APlaybookOrg" data-size="large" data-hashtags="measure">Tweet</a>
-			<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </div>
-      </div>
     </div>
+    <h3 id="problem">Problem</h3>
+<p>As data collection and aggregation grows in an organization, presenting and consuming that data can become a real challenge. A good foundation in visualization eases this burden. Using bar charts effectively can help with sw</p>
 
-    <style>
+<h3 id="actions">Actions</h3>
+<p>We will walk through an example of how to create a useful and beautiful barchart in R.</p>
 
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-    </script>
-    <script src="/assets/js/bootstrap.js">
-    </script>
+<h3 id="example">Example</h3>
 
-    <script>
-      $('#menu [data-section=""]').addClass('active');
+<p>In R, the library ggplot2 is your best friend when it comes to creatingstatic bar charts. You can create a simple one with the following code:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+
+ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/ZPrONaq.png" alt="image" /></p>
+
+<p>This bar chart is simple and effect but we can do better. We can start simple by adding titles.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span> <span class="o">+</span>
+  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes MPG Dataset&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/56OPrfU.png" alt="image" /></p>
+
+<p>The background space in this chart isn’t really pleasing to the eyes. We can make a customize the chart and make it all grey for effect:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>scales<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>grid<span class="p">)</span> 
+<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>extrafont<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggthemes<span class="p">)</span>
+
+blogData <span class="o">=</span> mpg
+
+palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
+color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
+
+ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span> <span class="o">+</span>
+  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes MPG Dataset&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span><span class="o">+</span>
+  theme_bw<span class="p">(</span>base_size<span class="o">=</span><span class="m">9</span><span class="p">)</span><span class="o">+</span>
+  theme<span class="p">(</span>panel.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+  theme<span class="p">(</span>plot.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+  theme<span class="p">(</span>panel.border<span class="o">=</span>element_rect<span class="p">(</span>color<span class="o">=</span>color.background<span class="p">))</span><span class="o">+</span>
+  theme<span class="p">(</span>legend.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">))</span></code></pre></div>
+
+<p><img src="https://i.imgur.com/dQ3YlQZ.png" alt="image" /></p>
+
+<p>A few more modifications can be made.</p>
+
+<ol>
+  <li>Sort by count</li>
+  <li>Flip the axis</li>
+  <li>Overlay the count</li>
+  <li>Change the font of the chart</li>
+  <li>Change the opacity of the bars</li>
+  <li>Remove the legend (doesn’t add any value)</li>
+  <li>Some other aesthetic fixes</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>scales<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>grid<span class="p">)</span> 
+<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>extrafont<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggthemes<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+
+blogData <span class="o">=</span> mpg
+
+palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
+color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
+
+newMPG <span class="o">&lt;-</span> group_by<span class="p">(</span>mpg<span class="p">,</span><span class="kp">class</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  summarise<span class="p">(</span>total <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span>
+  arrange<span class="p">(</span>desc<span class="p">(</span>total<span class="p">))</span>
+
+ggplot<span class="p">(</span>newMPG<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>reorder<span class="p">(</span><span class="kp">class</span><span class="p">,</span> <span class="o">+</span>total<span class="p">),</span> total<span class="p">))</span> <span class="o">+</span> coord_flip<span class="p">()</span><span class="o">+</span> geom_bar<span class="p">(</span>fill <span class="o">=</span> <span class="s">&quot;#6f00ff&quot;</span><span class="p">,</span> stat<span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span> <span class="o">+</span>
+  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span><span class="o">+</span>
+  geom_text<span class="p">(</span>aes<span class="p">(</span>y<span class="o">=</span>total <span class="o">-</span> <span class="m">1</span><span class="p">,</span> label<span class="o">=</span>total<span class="p">),</span> position <span class="o">=</span> position_dodge<span class="p">(</span><span class="m">.09</span><span class="p">),</span> vjust<span class="o">=</span> <span class="m">.5</span><span class="p">,</span> size <span class="o">=</span> <span class="m">3</span><span class="p">,</span> hjust <span class="o">=</span> <span class="m">1.3</span><span class="p">,</span> fontface<span class="o">=</span> <span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">)</span><span class="o">+</span>
+  my_theme<span class="p">()</span>
+  
+my_theme <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>
+  
+  <span class="c1"># Generate the colors for the chart procedurally with RColorBrewer</span>
+  palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
+  color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
+  color.grid.major <span class="o">=</span> palette<span class="p">[</span><span class="m">3</span><span class="p">]</span>
+  color.axis.text <span class="o">=</span> palette<span class="p">[</span><span class="m">6</span><span class="p">]</span>
+  color.axis.title <span class="o">=</span> palette<span class="p">[</span><span class="m">7</span><span class="p">]</span>
+  color.title <span class="o">=</span> palette<span class="p">[</span><span class="m">9</span><span class="p">]</span>
+  
+  <span class="c1"># Begin construction of chart</span>
+  theme_bw<span class="p">(</span>base_size<span class="o">=</span><span class="m">9</span><span class="p">)</span> <span class="o">+</span>
+    
+    <span class="c1"># Set the entire chart region to a light gray color</span>
+    theme<span class="p">(</span>panel.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>plot.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>panel.border<span class="o">=</span>element_rect<span class="p">(</span>color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+    
+    
+    <span class="c1"># Format the grid</span>
+    theme<span class="p">(</span>panel.grid.major<span class="o">=</span>element_line<span class="p">(</span>color<span class="o">=</span>color.grid.major<span class="p">,</span>size<span class="o">=</span><span class="m">.25</span><span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>panel.grid.minor<span class="o">=</span>element_blank<span class="p">())</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.ticks<span class="o">=</span>element_blank<span class="p">())</span> <span class="o">+</span>
+    
+    
+    <span class="c1"># Format the legend, but hide by default</span>
+    theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span> <span class="o">+</span>
+    theme<span class="p">(</span>legend.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>legend.text <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">7</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">))</span> <span class="o">+</span>
+    
+    
+    <span class="c1"># Set title and axis labels, and format these and tick marks</span>
+    theme<span class="p">(</span>plot.title<span class="o">=</span>element_text<span class="p">(</span>color<span class="o">=</span>color.title<span class="p">,</span> size<span class="o">=</span><span class="m">15</span><span class="p">,</span> vjust<span class="o">=</span><span class="m">1.25</span><span class="p">,</span>face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family<span class="o">=</span><span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.text.x<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.text<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.text.y<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.text<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.title.x<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">,</span> vjust<span class="o">=</span><span class="m">0</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family<span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.title.y<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">,</span> vjust<span class="o">=</span><span class="m">1.25</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span> 
+    theme<span class="p">(</span>strip.text.y <span class="o">=</span> element_text<span class="p">(</span>size <span class="o">=</span> <span class="m">10</span><span class="p">,</span> colour <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>strip.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">,</span> size<span class="o">=</span><span class="m">1</span><span class="p">))</span> <span class="o">+</span>
+    
+    <span class="c1"># Plot margins</span>
+    theme<span class="p">(</span>plot.margin <span class="o">=</span> unit<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">0.3</span><span class="p">,</span> <span class="m">0.35</span><span class="p">),</span> <span class="s">&quot;cm&quot;</span><span class="p">))</span>
+<span class="p">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/DOnynEA.png" alt="image" /></p>
+
+<p>Now we have a chart worth sharing.</p>
+
+<h3 id="references">References:</h3>
+
+<p><a href="http://docs.ggplot2.org/current/">ggplot2</a></p>
+
+<p><a href="http://minimaxir.com/2015/02/ggplot-tutorial/">Max Woolf</a></p>
+
+
+</div>
+
+</div>
+
+				<div id="tweet">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="APlaybookOrg" data-size="large" data-hashtags="measure">Tweet</a>
+					<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+		<!-- Latest jQuery Bootstrap JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js">
     </script>
-  <!--Adobe DTM Footer code-->
-  <script type="text/javascript">_satellite.pageBottom();</script>
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	<!--Adobe DTM Footer code-->
+	<script type="text/javascript">_satellite.pageBottom();</script>
   </body>
 </html>

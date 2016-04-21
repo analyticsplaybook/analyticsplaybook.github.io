@@ -1,0 +1,13 @@
+<h1 class="entry-title">
+{% if post.title %}
+    <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+{% endif %}
+</h1>
+<div class="entry-content">
+    <div id="meta-content">
+        <div class="post-meta small">
+            {{ post.author }} &times; <a href="{{page.url}}">{{ post.date | date: "%B %-d, %Y" }}</a> &times; {{ post.category }}
+        </div>
+    </div>
+    {{ content }}
+</div>
