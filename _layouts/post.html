@@ -1,5 +1,5 @@
 {% include top.html %}
-	<body class="default-page">
+	<body class="post-page">
     <div class="container">
 		{% include header.html %}
 		<div class="row">
@@ -7,7 +7,25 @@
 			{% include leftnav.html %}
 			</div>
 			<div class="col-md-9">
-				{{content}}
+				<div class="post-header post-header-no-map">
+					<h1>{{ page.title }}</h1>
+				</div>
+				<div id="meta-content">
+					<div class="post-meta small">
+						{{ page.author }} &times; <a href="{{page.url}}">{{ page.date | date: "%B %-d, %Y" }}</a> &times; {{ page.category }}
+					</div>
+				</div>
+				<div class="post">
+					{{ content }}
+				</div>
+				<div class="post-footer">
+					<div class="post-footer-meta">
+						<h3 id="tags">Tags</h3>
+						<div class="post-tags">
+							{% for tag in page.tags %}<a href="/tags/#{{ tag | downcase | replace:' ','_'}}" class="tag">{{ tag }}</a>{% if forloop.last %}{% else %}, {% endif %}{% endfor %}
+						</div>
+					</div>
+				</div>
 				<div id="tweet">
 					<a href="https://twitter.com/share" class="twitter-share-button" data-via="APlaybookOrg" data-size="large" data-hashtags="measure">Tweet</a>
 					<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -15,7 +33,6 @@
 			</div>
 		</div>
 	</div>
-    
 	{% include bottom.html %}
   </body>
 </html>

@@ -1,34 +1,32 @@
-<!-- Theme forked by https://github.com/driftyco/jetstrap-docs -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Analytics Playbook - Analytics Playbook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="alternate" type="application/rss+xml" title="My Site RSS" href="/feed.xml" />
+	<meta name="google-site-verification" content="jb8G-OKpGcofrmBS1UMKipsicRCLsh6qlYqI8vfi_6s" />
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Le styles -->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <!-- styles -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <style>
       body { padding-top: 60px; /* 60px to make the container go all the way
       to the bottom of the topbar */ }
     </style>
-    <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="/assets/css/docs.css" rel="stylesheet">
     <link href="/assets/css/custom.css" rel="stylesheet">
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
       </script>
     <![endif]-->
-    <!-- Le fav and touch icons -->
+    <!-- fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
-    <style>
-    </style>
     <!-- Adobe DTM Library -->
     <script src="//assets.adobedtm.com/0cc0e010ce8e1e1377a4055fc7a51f61b47d14dc/satelliteLib-365bfb734a97fe5729197abcd7095108eec22654.js"></script>
 	<script type="text/javascript">
@@ -42,105 +40,586 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a href="/" class="brand">Analytics Playbook</a>
-          <ul class="nav pull-right">
-			<li><a href="/how_to_submit.html" target="_blank">How To Submit An Article</a></li>
-            <li><a href="/README.html">About</a></li>
-            <li><a href="https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io" target="_blank">Fork This!</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+	<body class="default-page">
     <div class="container">
-      <div class="row">
-        <div class="span3">
-          <ul id="menu" class="nav nav-list" data-spy="affix">
-            <li class="nav-header">Google Analytics</li>
-            <li class="nav-header">Adobe Analytics</li>
-            <li class="nav-header">Tag Management</li>
-            <li data-section="tagmanagement/json_datalayer_w3c_based"><a href="/tagmanagement/json_datalayer_w3c_based.html">JSON Data Layer: Basics and W3C norm</a></li>
-			<li class="nav-header">API/Programmatic</li>
-			<li data-section="api/python_identify_duplicate_data"><a href="/api/python_identify_duplicate_data.html">Identify Duplicate Data Using Python</a></li>
-      <li data-section="api/learn_sql_30_minutes"><a href="/api/learn_sql_30_minutes.html">Learn SQL in 30 Minutes</a></li>
+				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
 
-			<li class="nav-header">Testing & Optimization</li>
-            <li data-section="testing/target_class_workflow"><a href="/testing/intro_to_ab_testing.html">Introduction to AB Testing and P-Values</a></li>
-            <li data-section="testing/target_class_workflow"><a href="/testing/target_class_workflow.html">Adobe Target: Classic Workflow</a></li>
-			<li class="nav-header">Data Visualization</li>
-            <li data-section="dataviz/statebin"><a href="/dataviz/statebin.html">Visualizing State Level Data With R</a></li>
-			<li class="nav-header">Search Engine Optimization (SEO)</li>
-			<li class="nav-header">Email</li>
-			<li class="nav-header">Customer Relationship Management (CRM)</li>
-          </ul>
-        </div>
-        <div class="span9">
-			<h1 id="analytics-playbookbran-open-source-repository-for-analytical-techniques">Analytics Playbook:<br />An Open Source Repository for Analytical Techniques</h1>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand">Analytics Playbook</a>
+				</div>
 
-<blockquote>
-  <p>If you have knowledge, let others light their candles in it.
-<a href="http://www.newyorker.com/magazine/2013/04/01/an-unfinished-woman">- Margaret Fuller (1810 - 1850)</a></p>
-</blockquote>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="/search.html">Search</a>
+						</li>
+						<li>
+							<a href="/how_to_submit.html">How To Submit An Article</a>
+						</li>
+						<li>
+							<a href="/about.html">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io" target="_blank">Fork This!</a>
+						</li>
+						<li>
+							<a href="/feed.xml"><img src="/images/feed-icon-14x14.png" title="RSS Feed" alt="RSS Feed" /></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-<h2 id="project-goals">Project Goals</h2>
+		<div class="row">
+			<div class="col-md-3">
+						
+				<div class="panel-group" id="panel-testing">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-testing" href="#testing">testing</a>
+						</div>
+						<div id="testing" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+									
+									  
+									
+								
+									
+									  
+										<li data-section='/testing/target_class_workflow.html'><a href='/testing/target_class_workflow.html'>Adobe Target - Classic Workflow</a></li>
+									  
+									
+									  
+										<li data-section='/testing/intro_to_ab_testing.html'><a href='/testing/intro_to_ab_testing.html'>Introduction to AB Testing and P-Values</a></li>
+									  
+									
+									  
+										<li data-section='/testing/conductrics_setup_abtest_intro.html'><a href='/testing/conductrics_setup_abtest_intro.html'>Conductrics - Intro to Page Editing for Simple A-B Testing</a></li>
+									  
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="panel-group" id="panel-tagmanagement">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-tagmanagement" href="#tagmanagement">tagmanagement</a>
+						</div>
+						<div id="tagmanagement" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+									
+									  
+									
+								
+									
+									  
+										<li data-section='/tagmanagement/adobe_dtm_previous_page_name.html'><a href='/tagmanagement/adobe_dtm_previous_page_name.html'>Adobe DTM - Previous Page Name</a></li>
+									  
+									
+									  
+										<li data-section='/tagmanagement/adobe_dtm_console_messages.html'><a href='/tagmanagement/adobe_dtm_console_messages.html'>Adobe DTM - Using Browser Console Messages</a></li>
+									  
+									
+									  
+										<li data-section='/tagmanagement/set_record_visitors_type_adobe_dtm.html'><a href='/tagmanagement/set_record_visitors_type_adobe_dtm.html'>Adobe DTM - Set and Record Visitor type</a></li>
+									  
+									
+									  
+										<li data-section='/tagmanagement/json_datalayer_w3c_based.html'><a href='/tagmanagement/json_datalayer_w3c_based.html'>JSON Data Layer based on W3C norm</a></li>
+									  
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="panel-group" id="panel-api">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-api" href="#api">api</a>
+						</div>
+						<div id="api" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+									
+									  
+									
+								
+									
+									  
+										<li data-section='/api/stattleship.html'><a href='/api/stattleship.html'>Stop Scraping - Analyzing Sports Data Using Stattleship</a></li>
+									  
+									
+									  
+										<li data-section='/api/python_groupby.html'><a href='/api/python_groupby.html'>Aggregate Sales Data using Python</a></li>
+									  
+									
+									  
+										<li data-section='/api/real-time-adobe-analytics-api-tutorial.html'><a href='/api/real-time-adobe-analytics-api-tutorial.html'>Real-Time Reporting Adobe Analytics API Tutorial</a></li>
+									  
+									
+									  
+										<li data-section='/api/python_identify_duplicate_data.html'><a href='/api/python_identify_duplicate_data.html'>Identifying Duplicate Sales Data using Python</a></li>
+									  
+									
+									  
+										<li data-section='/api/learn_sql_30_minutes.html'><a href='/api/learn_sql_30_minutes.html'>Learn SQL in 30 Minutes Using R and sqldf</a></li>
+									  
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="panel-group" id="panel-dataviz">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-dataviz" href="#dataviz">dataviz</a>
+						</div>
+						<div id="dataviz" class="panel-collapse collapse">
+							<div class="panel-body">
+								
+									
+									  
+									
+								
+									
+									  
+										<li data-section='/dataviz/bar_charts.html'><a href='/dataviz/bar_charts.html'>Making Great Bar Charts In R</a></li>
+									  
+									
+									  
+										<li data-section='/dataviz/statebin.html'><a href='/dataviz/statebin.html'>Visualizing State Level Data With R and Statebins</a></li>
+									  
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			<div class="col-md-9">
+				<!-- This loops through the paginated posts -->
 
-<p>The aim of this project is simple: <em>information deserves to be free</em>.</p>
+<h1 class="entry-title">
 
-<p>The “analytics” industry is no longer a community of like-minded analysts, sharing techniques and lifting each other up. Now, it’s just vendors and consultants writing advertisements about how they can “help” you (assuming you’re willing to fill out a lead-gen form, for no more details than thinly-veiled sales pitch). Gone are the days where people shared analysis techniques, provided code snippets or even wrote JavaScript plugins and gave them away to the community; now it’s just multi-thousand dollar conferences, where the speakers do nothing more than ape the knowledge that can be learned freely from a Tufte book, or from an (un-sourced) blog post.</p>
+    <a href="/api/stattleship.html">Stop Scraping - Analyzing Sports Data Using Stattleship</a>
 
-<p>It’s 2016, we can do better! For the cost of $20 for a domain name and an hours time, this website was created. Now, it’s time to start being that open, welcoming industry again.</p>
-
-<h2 id="contributing">Contributing</h2>
-
-<p>The aim of this site is to provide simple, “one-pager” style articles following a “Problem-Action-Resolution” framework:</p>
-
-<ul>
-  <li>State a bite-sized business problem/question</li>
-  <li>Show how you solved the problem/question</li>
-  <li>EXPLAIN why the solution works (with business impact if possible)</li>
-</ul>
-
-<p>It’s clearly not always feasible to use actual data, but where possible, using a generated or anonymized dataset will always help with understanding or will be highly valued by the community.</p>
-
-<p>While authors should feel free to link back to their own sites as necessary (such as for expanding upon a topic beyond the limited “one-page” style of this site), this is not intended to be a link farm. Submitting just links, or half-written teasers to link to other sites will be <strong>deleted/rejected</strong>. Otherwise, there are no restrictions on who may post, as long as it is useful to the community (beginner through expert-level).</p>
-
-<p>Submissions will be made using GitHub, using <a href="https://guides.github.com/features/mastering-markdown/#syntax">GitHub-flavored Markdown</a>. By using GitHub, this project can truly be a community affair; not only can anyone create a GitHub account for free, but articles will be able to be edited by anyone via pull request (subject to community discussion/approval).</p>
-
-<p>A <a href="https://raw.githubusercontent.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/master/template.md">template</a> is provided for convenience. Markdown takes a little bit of getting used to, but ultimately it’s a great plain-text format, while still allowing for rich display of content. A simple submission could just be to place a Markdown file in the main directory (where <a href="https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/blob/master/index.md">index.md</a> resides), and editing the <a href="https://github.com/digitalanalyticscookbook/digitalanalyticscookbook.github.io/blob/master/_layouts/minimal.html">sidebar.html</a> file to include the link to your article under the proper heading.</p>
-
-<h2 id="github-resources">GitHub Resources</h2>
-
-<p>Since not everyone has experience with GitHub, here are some useful links:</p>
-
-<ul>
-  <li><a href="https://github.com/">GitHub Account Signup</a></li>
-  <li><a href="https://git-scm.com/downloads">GitHub GUI Clients</a></li>
-  <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">Git Basics</a></li>
-</ul>
-
-<p>If you would like to contribute, have tried to use GitHub and are still stuck, there is also an <a href="http://analyticsplaybook.org/how_to_submit.html">email option</a>.</p>
-
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="APlaybookOrg" data-size="large" data-hashtags="measure">Tweet</a>
-			<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </div>
+</h1>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Tanya Cashorali &times; <a href="/index.html">April 20, 2016</a> &times; api
       </div>
-    </div>
+  </div>
+  <div class="content">
+    <h3 id="problem">Problem</h3>
 
-    <style>
+<p>You love sports. You love data. If you’ve ever gone on an epic journey in search of sports data, you’ve probably resorted to scraping data from sites like <a href="www.ESPN.com">ESPN</a> or <a href="http://www.baseball-reference.com/">Baseball Reference</a> and have spent countless hours writing Python code to use the powerful web scraping library <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a>. Maybe you even have a nice <a href="https://github.com/seemethere/nba_py">Python client</a> that scrapes <a href="http://stats.nba.com">stats.nba.com</a> or you wrote an <a href="https://github.com/BillPetti/baseballr">R package</a> to scrape Baseball Reference.</p>
 
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-    </script>
-    <script src="/assets/js/bootstrap.js">
-    </script>
+<p>However, we all know that websites get redesigned, formats change and sometimes access to specific stats is revoked (e.g. the NBA did this with <a href="http://stats.nba.com/help/whatsnew/">player movement tracking</a> but attributes it to ‘technical difficulties’). Suddenly, you are scrambling to update your scraping code in order to account for a few new divs or other elements on the web page that were renamed.</p>
 
-    <script>
-      $('#menu [data-section=""]').addClass('active');
+<h3 id="actions">Actions</h3>
+<p>This is where the Stattleship API comes to the rescue. We’ve built an easy-to-access set of sports data, stats and accomplishments for multiple sports (and expanding). We’ve partnered with Gracenote to provide all of our NFL, NBA, NHL and MLB game data. Our service is designed for creative fans who want to use Stattleship data to build sports apps that scale.</p>
+
+<p>We’ve cleaned, structured, and categorized all of the box score, player stats and game log data for you. We’ve even quantified specific performances and feats so that you can quickly identify whether a stat is a common-place occurrence or a record-breaking achievement.</p>
+
+<p>In this tutorial, we will show you how to use our R wrapper to access live and up-to-date sports data via the Stattleship API. There is also a Ruby gem for all of you Rubyists: <a href="https://github.com/stattleship/stattleship-ruby">https://github.com/stattleship/stattleship-ruby</a></p>
+
+<h3 id="example">Example</h3>
+<p>There are a few main endpoints that we will focus on. They are as follows:</p>
+
+<ul>
+  <li><b>games</b> - <i>contains game information such as date, attendance, scoreline, etc.</i></li>
+  <li><b>players</b>- <i>contains player information such as name, position, draft round, school, salary, weight, birthday, etc.</i></li>
+  <li><b>teams</b> - <i>contains team information such as name, division, colors, hashtags, etc.</i></li>
+  <li><b>game_logs</b> - <i>contains player-level game log information such as Kevin Durant’s assists from a specific game, total minutes played, etc.</i></li>
+  <li><b>team_game_logs</b> - <i>contains team-level game log information such as total points, rebounds and turnovers by the Boston Celtics in a specific game</i></li>
+</ul>
+
+<p>Here’s a basic Entity-Relationship Diagram outlining how these objects relate to one another:</p>
+
+<p><img src="/images/stattleship_erd.png" alt="" /></p>
+
+<p>In order to get started, sign up for a free API token from <a href="https://www.stattleship.com">here</a>. Now load up <a href="https://www.rstudio.com/">RStudio</a> and start following along! The first few lines of this R script will install the <a href="https://github.com/stattleship/stattleship-r">R package</a> from Github to your machine:</p>
+
+<p>(If you don’t have <code>devtools</code> installed you will have to install that first.)</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
+devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">&quot;stattleship/stattleship-r&quot;</span><span class="p">)</span>
+
+<span class="c1">## Load the stattleshipR package</span>
+<span class="kn">library</span><span class="p">(</span>stattleshipR<span class="p">)</span></code></pre></div>
+
+<p>Next you need to set your API token in the R environment:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Get your free token from www.stattleship.com</span>
+set_token<span class="p">(</span><span class="s">&quot;your-API-token-goes-here&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>Now we need to specify the sport, league and endpoint we are interested in. In this case we will fetch all MLB regular season game logs for the Red Sox to date. This is as easy as setting three parameters: <code>sport</code>, <code>league</code> and <code>ep</code> for endpoint.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">sport <span class="o">&lt;-</span> <span class="s">&#39;baseball&#39;</span>
+league <span class="o">&lt;-</span> <span class="s">&#39;mlb&#39;</span>
+ep <span class="o">&lt;-</span> <span class="s">&#39;game_logs&#39;</span></code></pre></div>
+
+<p>This last parameter, called <code>q_body</code> is where we can set more granular options such as requesting a specific team, stat, player or season.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">q_body <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span>team_id<span class="o">=</span><span class="s">&#39;mlb-bos&#39;</span><span class="p">,</span> status<span class="o">=</span><span class="s">&#39;ended&#39;</span><span class="p">,</span> interval_type<span class="o">=</span><span class="s">&#39;regularseason&#39;</span><span class="p">)</span></code></pre></div>
+
+<p>Now that all of our parameters are set, we can use <code>ss_get_result</code> to send our request to the Stattleship API. Notice the <code>walk=TRUE</code> option. This ensures that the request will walk through all pages of results and return everything. Results are returned 40 rows per page.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">gls <span class="o">&lt;-</span> ss_get_result<span class="p">(</span>sport<span class="o">=</span>sport<span class="p">,</span> league<span class="o">=</span>league<span class="p">,</span> ep<span class="o">=</span>ep<span class="p">,</span> query<span class="o">=</span>q_body<span class="p">,</span> walk<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span></code></pre></div>
+
+<p>We now have a list in R that has 5 elements (there were 5 pages of results returned).</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="o">&gt;</span> <span class="kp">length</span><span class="p">(</span>gls<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">5</span></code></pre></div>
+
+<p>We want to combine all of the pages of results into one <code>data.frame</code>:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">game_logs<span class="o">&lt;-</span><span class="kp">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span> <span class="kp">lapply</span><span class="p">(</span>gls<span class="p">,</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> x<span class="o">$</span>game_logs<span class="p">))</span></code></pre></div>
+
+<p>Let’s check out all of the data we now have access to from yesterday’s games:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">colnames</span><span class="p">(</span>game_logs<span class="p">)</span></code></pre></div>
+
+<p><img src="/images/Screen-Shot-2016-04-19-at-2-52-14-PM-1.png" alt="" /></p>
+
+<p>Wow, over 80 variables for each player including strikeouts, walks, doubles, runs, and more.</p>
+
+<p>I want to include player information into this data set though so I have more than just <code>player_ids</code>. Let’s retrieve all Boston Red Sox players by changing the <code>ep</code> to <code>players</code> and pass <code>team_id='mlb-bos</code> into the options list.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">sport <span class="o">&lt;-</span> <span class="s">&#39;baseball&#39;</span>  
+league <span class="o">&lt;-</span> <span class="s">&#39;mlb&#39;</span>  
+ep <span class="o">&lt;-</span> <span class="s">&#39;players&#39;</span>  
+q_body <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span>team_id<span class="o">=</span><span class="s">&#39;mlb-bos&#39;</span><span class="p">)</span>
+
+pls <span class="o">&lt;-</span> ss_get_result<span class="p">(</span>sport<span class="o">=</span>sport<span class="p">,</span> league<span class="o">=</span>league<span class="p">,</span> ep<span class="o">=</span>ep<span class="p">,</span> query<span class="o">=</span>q_body<span class="p">,</span> walk<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>  
+players<span class="o">&lt;-</span><span class="kp">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span> <span class="kp">lapply</span><span class="p">(</span>pls<span class="p">,</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> x<span class="o">$</span>players<span class="p">))</span></code></pre></div>
+
+<p>In order to merge the two data.frames we can simply rename the <code>id</code> column to <code>player_id</code> so we can use <code>merge</code> in R like this:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">colnames</span><span class="p">(</span>players<span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;player_id&#39;</span>
+game_logs <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>players<span class="p">,</span> game_logs<span class="p">,</span> by<span class="o">=</span><span class="s">&#39;player_id&#39;</span><span class="p">)</span></code></pre></div>
+
+<p>Now let’s do some basic player calculations using <code>dplyr</code>.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&#39;dplyr&#39;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+
+<span class="c1">## Only include game_logs where a player actually played the game, calculate mean batting average,</span>
+<span class="c1">## total runs, total bases and pull in salary info</span>
+stats <span class="o">&lt;-</span>
+  game_logs <span class="o">%&gt;%</span>
+  filter<span class="p">(</span>game_played <span class="o">==</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  group_by<span class="p">(</span>name<span class="p">)</span> <span class="o">%&gt;%</span>
+  summarise<span class="p">(</span>totalRuns <span class="o">=</span> <span class="kp">sum</span><span class="p">(</span>runs<span class="p">),</span> meanBA <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>batting_average<span class="p">),</span> totalBases<span class="o">=</span><span class="kp">sum</span><span class="p">(</span>total_bases<span class="p">),</span> salary<span class="o">=</span><span class="kp">max</span><span class="p">(</span>salary<span class="p">))</span></code></pre></div>
+
+<p><img src="/images/Screen-Shot-2016-04-19-at-3-24-14-PM.png" alt="" /></p>
+
+<p>Good! Now let’s plot it all using <code>ggplot2</code>.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>stats<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>totalRuns<span class="p">,</span> y<span class="o">=</span>meanBA<span class="p">,</span> size<span class="o">=</span>totalBases<span class="p">,</span> label<span class="o">=</span>name<span class="p">,</span> color<span class="o">=</span>salary<span class="p">))</span> <span class="o">+</span> geom_text<span class="p">()</span></code></pre></div>
+
+<p>This plot actually enables us to visualize 4 different variables at once. The x and y axes display total runs and mean batting average, the size of the labels indicate how many total bases the player has had, and the color indicates salary. Xander Bogaerts and Travis Shaw are looking like quite a bargain at this point in the season already.
+<img src="/images/redsox.png" alt="" /></p>
+
+<p>Let us know if you build anything cool with this awesome sports data API! We also welcome contributions to our R wrapper via <a href="https://github.com/stattleship/stattleship-r">pull requests in Github</a>. We have a <a href="https://fanboat.stattleship.com/">public Slack channel</a> as well where you can join us to talk sports, data, get R or Stattleship API help, and provide feedback.</p>
+
+<h3 id="references--other-examples">References / Other Examples</h3>
+
+<ul>
+  <li><a href="https://gist.github.com/tcash21/3a3b103386e1115aee6aa6ea6add072a">Full R script from this post</a></li>
+  <li><a href="developers.stattleship.com">Stattleship API documentation</a></li>
+  <li><a href="https://oglethorpe.stattleship.com/photos?photo_type=CurrentWinningStreakPhoto">Oglethorpe, stat infographics otherwise known as StatShots</a></li>
+  <li><a href="http://104.131.198.150:3838/statship-app/">NFL Yardage by Team 2015</a></li>
+  <li><a href="https://tcb-analytics.shinyapps.io/dfsoptimize/">Fanduel NBA Optimizer</a></li>
+  <li><a href="https://github.com/stattleship/glickman">Glickman Statmoji slackbot</a></li>
+  <li><a href="http://blog.stattleship.com">Stattleship Blog</a></li>
+</ul>
+
+    <hr>
+  </div>
+
+<h1 class="entry-title">
+
+    <a href="/dataviz/bar_charts.html">Making Great Bar Charts In R</a>
+
+</h1>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Jowanza Joseph &times; <a href="/index.html">April 11, 2016</a> &times; dataviz
+      </div>
+  </div>
+  <div class="content">
+    <h3 id="problem">Problem</h3>
+<p>As data collection and aggregation grows in an organization, presenting and consuming that data can become a real challenge. A good foundation in visualization eases this burden. Using bar charts effectively can help with sw</p>
+
+<h3 id="actions">Actions</h3>
+<p>We will walk through an example of how to create a useful and beautiful barchart in R.</p>
+
+<h3 id="example">Example</h3>
+
+<p>In R, the library ggplot2 is your best friend when it comes to creatingstatic bar charts. You can create a simple one with the following code:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+
+ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/ZPrONaq.png" alt="image" /></p>
+
+<p>This bar chart is simple and effect but we can do better. We can start simple by adding titles.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span> <span class="o">+</span>
+  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes MPG Dataset&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/56OPrfU.png" alt="image" /></p>
+
+<p>The background space in this chart isn’t really pleasing to the eyes. We can make a customize the chart and make it all grey for effect:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>scales<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>grid<span class="p">)</span> 
+<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>extrafont<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggthemes<span class="p">)</span>
+
+blogData <span class="o">=</span> mpg
+
+palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
+color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
+
+ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span> <span class="o">+</span>
+  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes MPG Dataset&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span><span class="o">+</span>
+  theme_bw<span class="p">(</span>base_size<span class="o">=</span><span class="m">9</span><span class="p">)</span><span class="o">+</span>
+  theme<span class="p">(</span>panel.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+  theme<span class="p">(</span>plot.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+  theme<span class="p">(</span>panel.border<span class="o">=</span>element_rect<span class="p">(</span>color<span class="o">=</span>color.background<span class="p">))</span><span class="o">+</span>
+  theme<span class="p">(</span>legend.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">))</span></code></pre></div>
+
+<p><img src="https://i.imgur.com/dQ3YlQZ.png" alt="image" /></p>
+
+<p>A few more modifications can be made.</p>
+
+<ol>
+  <li>Sort by count</li>
+  <li>Flip the axis</li>
+  <li>Overlay the count</li>
+  <li>Change the font of the chart</li>
+  <li>Change the opacity of the bars</li>
+  <li>Remove the legend (doesn’t add any value)</li>
+  <li>Some other aesthetic fixes</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>scales<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>grid<span class="p">)</span> 
+<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>extrafont<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggthemes<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+
+blogData <span class="o">=</span> mpg
+
+palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
+color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
+
+newMPG <span class="o">&lt;-</span> group_by<span class="p">(</span>mpg<span class="p">,</span><span class="kp">class</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  summarise<span class="p">(</span>total <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span>
+  arrange<span class="p">(</span>desc<span class="p">(</span>total<span class="p">))</span>
+
+ggplot<span class="p">(</span>newMPG<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>reorder<span class="p">(</span><span class="kp">class</span><span class="p">,</span> <span class="o">+</span>total<span class="p">),</span> total<span class="p">))</span> <span class="o">+</span> coord_flip<span class="p">()</span><span class="o">+</span> geom_bar<span class="p">(</span>fill <span class="o">=</span> <span class="s">&quot;#6f00ff&quot;</span><span class="p">,</span> stat<span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span> <span class="o">+</span>
+  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span><span class="o">+</span>
+  geom_text<span class="p">(</span>aes<span class="p">(</span>y<span class="o">=</span>total <span class="o">-</span> <span class="m">1</span><span class="p">,</span> label<span class="o">=</span>total<span class="p">),</span> position <span class="o">=</span> position_dodge<span class="p">(</span><span class="m">.09</span><span class="p">),</span> vjust<span class="o">=</span> <span class="m">.5</span><span class="p">,</span> size <span class="o">=</span> <span class="m">3</span><span class="p">,</span> hjust <span class="o">=</span> <span class="m">1.3</span><span class="p">,</span> fontface<span class="o">=</span> <span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">)</span><span class="o">+</span>
+  my_theme<span class="p">()</span>
+  
+my_theme <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>
+  
+  <span class="c1"># Generate the colors for the chart procedurally with RColorBrewer</span>
+  palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
+  color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
+  color.grid.major <span class="o">=</span> palette<span class="p">[</span><span class="m">3</span><span class="p">]</span>
+  color.axis.text <span class="o">=</span> palette<span class="p">[</span><span class="m">6</span><span class="p">]</span>
+  color.axis.title <span class="o">=</span> palette<span class="p">[</span><span class="m">7</span><span class="p">]</span>
+  color.title <span class="o">=</span> palette<span class="p">[</span><span class="m">9</span><span class="p">]</span>
+  
+  <span class="c1"># Begin construction of chart</span>
+  theme_bw<span class="p">(</span>base_size<span class="o">=</span><span class="m">9</span><span class="p">)</span> <span class="o">+</span>
+    
+    <span class="c1"># Set the entire chart region to a light gray color</span>
+    theme<span class="p">(</span>panel.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>plot.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>panel.border<span class="o">=</span>element_rect<span class="p">(</span>color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+    
+    
+    <span class="c1"># Format the grid</span>
+    theme<span class="p">(</span>panel.grid.major<span class="o">=</span>element_line<span class="p">(</span>color<span class="o">=</span>color.grid.major<span class="p">,</span>size<span class="o">=</span><span class="m">.25</span><span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>panel.grid.minor<span class="o">=</span>element_blank<span class="p">())</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.ticks<span class="o">=</span>element_blank<span class="p">())</span> <span class="o">+</span>
+    
+    
+    <span class="c1"># Format the legend, but hide by default</span>
+    theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span> <span class="o">+</span>
+    theme<span class="p">(</span>legend.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>legend.text <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">7</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">))</span> <span class="o">+</span>
+    
+    
+    <span class="c1"># Set title and axis labels, and format these and tick marks</span>
+    theme<span class="p">(</span>plot.title<span class="o">=</span>element_text<span class="p">(</span>color<span class="o">=</span>color.title<span class="p">,</span> size<span class="o">=</span><span class="m">15</span><span class="p">,</span> vjust<span class="o">=</span><span class="m">1.25</span><span class="p">,</span>face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family<span class="o">=</span><span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.text.x<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.text<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.text.y<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.text<span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.title.x<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">,</span> vjust<span class="o">=</span><span class="m">0</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family<span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>axis.title.y<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">,</span> vjust<span class="o">=</span><span class="m">1.25</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span> 
+    theme<span class="p">(</span>strip.text.y <span class="o">=</span> element_text<span class="p">(</span>size <span class="o">=</span> <span class="m">10</span><span class="p">,</span> colour <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
+    theme<span class="p">(</span>strip.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">,</span> size<span class="o">=</span><span class="m">1</span><span class="p">))</span> <span class="o">+</span>
+    
+    <span class="c1"># Plot margins</span>
+    theme<span class="p">(</span>plot.margin <span class="o">=</span> unit<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">0.3</span><span class="p">,</span> <span class="m">0.35</span><span class="p">),</span> <span class="s">&quot;cm&quot;</span><span class="p">))</span>
+<span class="p">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/DOnynEA.png" alt="image" /></p>
+
+<p>Now we have a chart worth sharing.</p>
+
+<h3 id="references">References:</h3>
+
+<p><a href="http://docs.ggplot2.org/current/">ggplot2</a></p>
+
+<p><a href="http://minimaxir.com/2015/02/ggplot-tutorial/">Max Woolf</a></p>
+
+
+    <hr>
+  </div>
+
+<h1 class="entry-title">
+
+    <a href="/tagmanagement/adobe_dtm_previous_page_name.html">Adobe DTM - Previous Page Name</a>
+
+</h1>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Till Buettner &times; <a href="/index.html">March 30, 2016</a> &times; tagmanagement
+      </div>
+  </div>
+  <div class="content">
+    <h3 id="problem">Problem</h3>
+
+<p>You want to track the previous page name via Adobe DTM but you can’t use a Plugin (getPreviousValue).</p>
+
+<h3 id="actions">Actions</h3>
+
+<p>You can use Session Storage to track the previous page name.</p>
+
+<h3 id="explanation-resolution">Explanation (resolution)</h3>
+
+<p>You need two Page Load Rules (PLR) to track the previous page name. First PLR:</p>
+
+<ul>
+  <li>Name: Save prior page name to session storage</li>
+  <li>Trigger Rule at “DOM Ready”</li>
+  <li>Rule Condition: Path “.*” (regex enabled)</li>
+  <li>Custom Code “None-Sequential Javascript”:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">Storage</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">!==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">pagename</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">pageName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Second PLR:</p>
+
+<ul>
+  <li>Name: Save prior page name to prop</li>
+  <li>Trigger Rule at “Bottom of Page”</li>
+  <li>Rule Condition: Path “.*” (regex enabled)</li>
+  <li>Rule Condition - Custom:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">Storage</span><span class="p">)</span> <span class="o">!==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;pagename&quot;</span><span class="p">))</span> <span class="o">===</span> <span class="s2">&quot;string&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">prevPageName</span> <span class="o">=</span> <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;pagename&quot;</span><span class="p">);</span>
+    <span class="nx">_satellite</span><span class="p">.</span><span class="nx">setVar</span><span class="p">(</span><span class="s2">&quot;previousPage&quot;</span><span class="p">,</span><span class="nx">prevPageName</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<ul>
+  <li>Adobe Analytics: prop2 set as %previousPage% //Or any other prop you want to use, just enable pathing on it.</li>
+</ul>
+
+<p>There you go, the previous pageName is implemented.</p>
+
+<h3 id="references">References</h3>
+<p><a href="http://apastebin.tumblr.com/post/139627646180/adobe-analytics-dtm-previous-pagename">Previous page name - apastebin</a></p>
+
+    <hr>
+  </div>
+
+
+<!-- Pagination links -->
+
+<div class="pagination">
+  
+    <span>&laquo; Prev</span>
+  
+
+  
+    
+       1
+    
+  
+    
+      <a href="/page2">2</a>
+    
+  
+    
+      <a href="/page3">3</a>
+    
+  
+    
+      <a href="/page4">4</a>
+    
+  
+    
+      <a href="/page5">5</a>
+    
+  
+
+  
+    <a href="/page2">Next &raquo;</a>
+  
+</div>
+
+
+				<div id="tweet">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="APlaybookOrg" data-size="large" data-hashtags="measure">Tweet</a>
+					<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+		<!-- Latest jQuery Bootstrap JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js">
     </script>
-  <!--Adobe DTM Footer code-->
-  <script type="text/javascript">_satellite.pageBottom();</script>
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	<!--Adobe DTM Footer code-->
+	<script type="text/javascript">_satellite.pageBottom();</script>
   </body>
 </html>
