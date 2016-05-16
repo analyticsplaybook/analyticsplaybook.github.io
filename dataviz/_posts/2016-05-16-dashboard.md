@@ -32,7 +32,7 @@ For this example we'll grab data from Google Analytics and use it to make 3 char
 
 To get this all to work, we'll need to wrap our code in a flexdashboard template. You can find out how to do that [here](http://rmarkdown.rstudio.com/flexdashboard/). We'll use the row template to get our charts displaying well on the page and allow for vertical scrolling.
 
-```R
+{% highlight r%}
 ---
 title: "My Google Analytics Dashboard"
 output: 
@@ -40,32 +40,30 @@ output:
     orientation: rows
     vertical_layout: scroll
 ---
-```
+{% endhighlight %}
 
 For chart 1 we'll use DT, a data table library to create a searchable and sortable table for our dashboard. I used data from the in-market segment in Google Analytics. Plotting the chart with default stylings is easy:
 
-```R
+{% highlight r%}
 datatable(my_data_table)
-```
+{% endhighlight %}
 
 Chart 2 will be our histogram. The code for creating a histogram in Highcharter is very simple as well:
 
-```R
+{% highlight r%}
 hchart(dataset$Sessions, color = "#B71C1C", name = "Sessions") %>% 
   hc_title(text = "Sessions May 2015 - May 2016")
-  
-```
+{% endhighlight %}
 
 This should plot a histogram of traffic to my website from May 2015 through May 2016.  This chart is also zoomable, which is a nice feature to get for free.
 
 
 Chart 3 is a time series chart. I will also use Highcharter for this as well:
 
-```R
+{% highlight r%}
 highchart() %>%
   hc_add_series_times_values(as.Date(dataset$Day.Index) , dataset$Sessions, name = "Sessions")
-
-```
+{% endhighlight %}
 
 This gives us visits by time over the same range.
 
@@ -75,7 +73,7 @@ From here you can click "Knit" in Rstudio and it will compile this markdown docu
 
 ### References
 
-[flexdashboard](http://rmarkdown.rstudio.com/flexdashboard/index.html)
-[highcharter](http://jkunst.com/highcharter/index.html)
-[datatable]()
-[DT](http://rstudio.github.io/DT/)
+* [flexdashboard](http://rmarkdown.rstudio.com/flexdashboard/index.html)
+* [highcharter](http://jkunst.com/highcharter/index.html)
+* [datatable]()
+* [DT](http://rstudio.github.io/DT/)
