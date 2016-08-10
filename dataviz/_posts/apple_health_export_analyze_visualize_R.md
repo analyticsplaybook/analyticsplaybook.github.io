@@ -2,7 +2,7 @@
 
 layout: post
 title: Real-Time Reporting Adobe Analytics API Tutorial
-date:   2016-03-13
+date:   2016-08-10
 author: Ryan Praskievicz
 category: api
 tags:
@@ -30,11 +30,11 @@ How to Export Apple Health App Data
 
 2) Tap the Health Data icon in the bottom navigation. This will launch a list of all your Apple Heath data. In the List view, tap the “All” item which is the first item in the list.
 
-![Apple HealthKit Export 1](http://i1.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_export_1-e1464963113156.png)
+![Apple HealthKit Export 1](http://i0.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_export_1-e1464963113156-173x300.png?resize=231%2C400)
 
 3) Tap the send arrow icon in the top right. This will launch an alert that says “Exporting Health Data Preparing…” The export preparation took 4 minutes for my health data, so be patient.
 
-![Apple HealthKit Export 2](http://i2.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_export_2-e1464963298330.png)
+![Apple HealthKit Export 2](http://i2.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_export_2-e1464963298330-172x300.png?resize=229%2C400)
 
 4) Once the data is ready to send you’ll see an overlay where you can select how to send the health data export. I chose to send the file via email. The file name is export.zip.
 
