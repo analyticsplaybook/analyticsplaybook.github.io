@@ -196,6 +196,10 @@
 								
 									
 									  
+										<li data-section='/dataviz/dashboard.html'><a href='/dataviz/dashboard.html'>Creating Interactive Dashboards in R</a></li>
+									  
+									
+									  
 										<li data-section='/dataviz/bar_charts.html'><a href='/dataviz/bar_charts.html'>Making Great Bar Charts In R</a></li>
 									  
 									
@@ -212,6 +216,79 @@
 			</div>
 			<div class="col-md-9">
 				<!-- This loops through the paginated posts -->
+
+<h1 class="entry-title">
+
+    <a href="/dataviz/dashboard.html">Creating Interactive Dashboards in R</a>
+
+</h1>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Jowanza Joseph &times; <a href="/index.html">May 16, 2016</a> &times; dataviz
+      </div>
+  </div>
+  <div class="content">
+    <h3 id="problem">Problem</h3>
+
+<p>Once painstakingly collected, data is most value when actionable steps are taken from it. Methods of safely distributing and communicating results from data are not all created equally. Dashboards are a safe and effective way to communicate results from data.</p>
+
+<h3 id="actions">Actions</h3>
+
+<p>We’ll walk through an example of how to create a dashboard in R using <em>flexdashboard</em>, an R framework for creating dashboards with R and Markdown.</p>
+
+<h3 id="example">Example</h3>
+
+<p>For this example we’ll grab data from Google Analytics and use it to make 3 charts on a dashboard.</p>
+
+<ol>
+  <li>A histogram</li>
+  <li>A time series chart</li>
+  <li>Sortable table</li>
+</ol>
+
+<p>To get this all to work, we’ll need to wrap our code in a flexdashboard template. You can find out how to do that <a href="http://rmarkdown.rstudio.com/flexdashboard/">here</a>. We’ll use the row template to get our charts displaying well on the page and allow for vertical scrolling.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="o">---</span>
+title<span class="o">:</span> <span class="s">&quot;My Google Analytics Dashboard&quot;</span>
+output<span class="o">:</span> 
+  flexdashboard<span class="o">::</span>flex_dashboard<span class="o">:</span>
+    orientation<span class="o">:</span> rows
+    vertical_layout<span class="o">:</span> scroll
+<span class="o">---</span></code></pre></div>
+
+<p>For chart 1 we’ll use DT, a data table library to create a searchable and sortable table for our dashboard. I used data from the in-market segment in Google Analytics. Plotting the chart with default stylings is easy:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">datatable<span class="p">(</span>my_data_table<span class="p">)</span></code></pre></div>
+
+<p>Chart 2 will be our histogram. The code for creating a histogram in Highcharter is very simple as well:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">hchart<span class="p">(</span>dataset<span class="o">$</span>Sessions<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;#B71C1C&quot;</span><span class="p">,</span> name <span class="o">=</span> <span class="s">&quot;Sessions&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  hc_title<span class="p">(</span>text <span class="o">=</span> <span class="s">&quot;Sessions May 2015 - May 2016&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>This should plot a histogram of traffic to my website from May 2015 through May 2016.  This chart is also zoomable, which is a nice feature to get for free.</p>
+
+<p>Chart 3 is a time series chart. I will also use Highcharter for this as well:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">highchart<span class="p">()</span> <span class="o">%&gt;%</span>
+  hc_add_series_times_values<span class="p">(</span><span class="kp">as.Date</span><span class="p">(</span>dataset<span class="o">$</span>Day.Index<span class="p">)</span> <span class="p">,</span> dataset<span class="o">$</span>Sessions<span class="p">,</span> name <span class="o">=</span> <span class="s">&quot;Sessions&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>This gives us visits by time over the same range.</p>
+
+<p>From here you can click “Knit” in Rstudio and it will compile this markdown document into HTML. You will have a working, interactive and responsive dashboard. I’ve published a working version to rPubs for reference <a href="http://rpubs.com/josep2/example-ga-dashboard">here</a>.</p>
+
+<p><img src="http://i.imgur.com/FvPLUmS.png" alt="image" /></p>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li><a href="http://rmarkdown.rstudio.com/flexdashboard/index.html">flexdashboard</a></li>
+  <li><a href="http://jkunst.com/highcharter/index.html">highcharter</a></li>
+  <li><a href="">datatable</a></li>
+  <li><a href="http://rstudio.github.io/DT/">DT</a></li>
+</ul>
+
+    <hr>
+  </div>
 
 <h1 class="entry-title">
 
@@ -500,71 +577,6 @@ my_theme <span class="o">&lt;-</span> <span class="kr">function</span><span clas
 
 <p><a href="http://minimaxir.com/2015/02/ggplot-tutorial/">Max Woolf</a></p>
 
-
-    <hr>
-  </div>
-
-<h1 class="entry-title">
-
-    <a href="/tagmanagement/adobe_dtm_previous_page_name.html">Adobe DTM - Previous Page Name</a>
-
-</h1>
-  <div id="meta-content">
-      <div class="post-meta small">
-          Till Buettner &times; <a href="/index.html">March 30, 2016</a> &times; tagmanagement
-      </div>
-  </div>
-  <div class="content">
-    <h3 id="problem">Problem</h3>
-
-<p>You want to track the previous page name via Adobe DTM but you can’t use a Plugin (getPreviousValue).</p>
-
-<h3 id="actions">Actions</h3>
-
-<p>You can use Session Storage to track the previous page name.</p>
-
-<h3 id="explanation-resolution">Explanation (resolution)</h3>
-
-<p>You need two Page Load Rules (PLR) to track the previous page name. First PLR:</p>
-
-<ul>
-  <li>Name: Save prior page name to session storage</li>
-  <li>Trigger Rule at “DOM Ready”</li>
-  <li>Rule Condition: Path “.*” (regex enabled)</li>
-  <li>Custom Code “None-Sequential Javascript”:</li>
-</ul>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">Storage</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">!==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">pagename</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">pageName</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>Second PLR:</p>
-
-<ul>
-  <li>Name: Save prior page name to prop</li>
-  <li>Trigger Rule at “Bottom of Page”</li>
-  <li>Rule Condition: Path “.*” (regex enabled)</li>
-  <li>Rule Condition - Custom:</li>
-</ul>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">Storage</span><span class="p">)</span> <span class="o">!==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;pagename&quot;</span><span class="p">))</span> <span class="o">===</span> <span class="s2">&quot;string&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">prevPageName</span> <span class="o">=</span> <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;pagename&quot;</span><span class="p">);</span>
-    <span class="nx">_satellite</span><span class="p">.</span><span class="nx">setVar</span><span class="p">(</span><span class="s2">&quot;previousPage&quot;</span><span class="p">,</span><span class="nx">prevPageName</span><span class="p">);</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<ul>
-  <li>Adobe Analytics: prop2 set as %previousPage% //Or any other prop you want to use, just enable pathing on it.</li>
-</ul>
-
-<p>There you go, the previous pageName is implemented.</p>
-
-<h3 id="references">References</h3>
-<p><a href="http://apastebin.tumblr.com/post/139627646180/adobe-analytics-dtm-previous-pagename">Previous page name - apastebin</a></p>
 
     <hr>
   </div>
