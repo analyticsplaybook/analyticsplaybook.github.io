@@ -14,7 +14,8 @@ tags:
 
 ### Problem
 The Apple Healthkit App dashboard is not useful beyond a daily snapshot of your steps, miles, and flights climbed.
-How to export, analyze and visualize Apple Health Kit Steps data using R to make better visaulizations?
+
+How to export, analyze and visualize Apple Health Kit Steps data using R?
 
 ### Actions
 - Export Apple HealthKit data from your iPhone.
