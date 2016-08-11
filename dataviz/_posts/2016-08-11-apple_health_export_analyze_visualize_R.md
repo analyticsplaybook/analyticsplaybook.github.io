@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: Apple Health Data Export Analyze and Visualize with R
+title: Apple Health Data - Export, Analyze and Visualize with R
 date:   2016-08-10
 author: Ryan Praskievicz
 category: api

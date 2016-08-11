@@ -157,6 +157,10 @@
 								
 									
 									  
+										<li data-section='/dataviz/api/apple_health_export_analyze_visualize_R.html'><a href='/dataviz/api/apple_health_export_analyze_visualize_R.html'>Apple Health Data - Export, Analyze and Visualize with R</a></li>
+									  
+									
+									  
 										<li data-section='/api/stattleship.html'><a href='/api/stattleship.html'>Stop Scraping - Analyzing Sports Data Using Stattleship</a></li>
 									  
 									
@@ -196,6 +200,10 @@
 								
 									
 									  
+										<li data-section='/dataviz/api/apple_health_export_analyze_visualize_R.html'><a href='/dataviz/api/apple_health_export_analyze_visualize_R.html'>Apple Health Data - Export, Analyze and Visualize with R</a></li>
+									  
+									
+									  
 										<li data-section='/dataviz/dashboard.html'><a href='/dataviz/dashboard.html'>Creating Interactive Dashboards in R</a></li>
 									  
 									
@@ -216,6 +224,92 @@
 			</div>
 			<div class="col-md-9">
 				<!-- This loops through the paginated posts -->
+
+<h1 class="entry-title">
+
+    <a href="/dataviz/api/apple_health_export_analyze_visualize_R.html">Apple Health Data - Export, Analyze and Visualize with R</a>
+
+</h1>
+  <div id="meta-content">
+      <div class="post-meta small">
+          Ryan Praskievicz &times; <a href="/index.html">August 10, 2016</a> &times; api
+      </div>
+  </div>
+  <div class="content">
+    <h3 id="problem">Problem</h3>
+<p>The Apple Healthkit App dashboard is not useful beyond a daily snapshot of your steps, miles, and flights climbed.</p>
+
+<p>How to export, analyze and visualize Apple Health Kit Steps data using R?</p>
+
+<h3 id="actions">Actions</h3>
+<ul>
+  <li>Export Apple HealthKit data from your iPhone.</li>
+  <li>Run R Script for analysis and visualizations.</li>
+</ul>
+
+<p><img src="http://i2.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_kit_steps_by_day_of_week_r_graph.png" alt="Apple Health Steps by Day of Week R Visualization" /></p>
+
+<h3 id="explanation-resolution">Explanation (resolution)</h3>
+
+<h3 id="how-to-export-apple-health-app-data">How to Export Apple Health App Data</h3>
+
+<p>1) Launch the Apple Health App on your iPhone. The app icon is a heart.</p>
+
+<p>2) Tap the Health Data icon in the bottom navigation. This will launch a list of all your Apple Heath data. In the List view, tap the “All” item which is the first item in the list.</p>
+
+<p><img src="http://i0.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_export_1-e1464963113156-173x300.png?resize=231%2C400" alt="Apple HealthKit Export 1" /></p>
+
+<p>3) Tap the send arrow icon in the top right. This will launch an alert that says “Exporting Health Data Preparing…” The export preparation took 4 minutes for my health data, so be patient.</p>
+
+<p><img src="http://i2.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_export_2-e1464963298330-172x300.png?resize=229%2C400" alt="Apple HealthKit Export 2" /></p>
+
+<p>4) Once the data is ready to send you’ll see an overlay where you can select how to send the health data export. I chose to send the file via email. The file name is export.zip.</p>
+
+<p><img src="http://i1.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_export_3-e1464963456151-173x300.png?resize=230%2C400" alt="Apple HealthKit Export 3" />
+<img src="http://i2.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_export_4-e1464963494135-173x300.png?resize=231%2C400" alt="Apple HealthKit Export 4" /></p>
+
+<h3 id="how-to-use-r-to-analyze-and-visualize-your-apple-health-data">How to use R to Analyze and Visualize your Apple Health Data</h3>
+
+<p>1) Make sure to install the packages used in the R script if you don’t already have them installed</p>
+
+<p><code>&gt; install.packages(c("dplyr","ggplot2","lubridate","XML"))</code></p>
+
+<p>2) Run the <a href="https://gist.github.com/ryanpraski/ba9baee2583cfb1af88ca4ec62311a3d">R Script</a></p>
+
+<p>3) Page through the 4 plots and see the R Console for data tables.</p>
+
+<p>A boxplot showing my steps data by month and a bar graph showing my steps data by month are shown below.</p>
+
+<p><img src="http://i0.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_kit_steps_by_month_by_year_r_boxplot.png" alt="Apple Health Steps Boxplot" />
+<img src="http://i2.wp.com/www.ryanpraski.com/wp-content/uploads/2016/06/apple_health_kit_steps_by_year_by_month__r_bargraph.png" alt="Apple Health Steps Bar Graph" /></p>
+
+<p>My summary monthly steps statistics for 2015 are shown below. This data is output to the R Console.</p>
+
+<pre><code> month  |   mean    |  sd | median  | max |  min  |    25%  |   75%|
+ ------ | --------- | ----|-------- | --- | ------|-------- | ---- | 
+ chr |  dbl |  dbl |  dbl| dbl| dbl  |  dbl |  dbl|
+ 01 | 6928.45| 3499.36|  5924.0| 15173|  2286|  4007.00|  8581.0|
+ 02 |12000.07| 5727.69| 11977.5| 22675|  4097|  6853.25| 15649.5|
+ 03 |11271.26| 2579.44| 11662.0| 15199|  6269|  9723.50| 12667.0|
+ 04 |14846.27| 5825.21| 14257.0| 25357|  4445| 10925.75| 19322.0|
+ 05 |13119.45 |5139.61| 12405.0| 25031|  2971|  9829.50| 16222.0|
+ 06 |11457.70 |5083.92|  9904.5| 25643|  4301|  7424.25| 14225.0|
+ 07 |16419.06 |7369.98| 14750.0| 35582|  4546| 11243.50| 20911.5|
+ 08 |13968.32 |6855.27| 12189.0| 32019|  2897| 10469.00| 14561.0|
+ 09 |13096.07 |5272.44| 12753.0| 29838|  5737| 10155.50| 15987.0|
+ 10 |12150.16 |5163.45| 11227.0| 27174|  3906|  8952.00| 15359.5|
+ 11 |10442.80 |4405.78|  9476.5| 22683|  3814|  8233.75| 12669.5|
+ 12  |8331.03 |3933.16|  8098.0| 15450|  1556|  5192.00| 11396.5|
+</code></pre>
+
+<h3 id="references">References</h3>
+
+<p><a href="http://www.ryanpraski.com/apple-health-data-how-to-export-analyze-visualize-guide/">Full Post on ryanpraski.com</a></p>
+
+<p>If you have any questions or  hit me up on Twitter <a href="https://twitter.com/ryanpraski">@ryanpraski</a></p>
+
+    <hr>
+  </div>
 
 <h1 class="entry-title">
 
@@ -429,158 +523,6 @@ stats <span class="o">&lt;-</span>
     <hr>
   </div>
 
-<h1 class="entry-title">
-
-    <a href="/dataviz/bar_charts.html">Making Great Bar Charts In R</a>
-
-</h1>
-  <div id="meta-content">
-      <div class="post-meta small">
-          Jowanza Joseph &times; <a href="/index.html">April 11, 2016</a> &times; dataviz
-      </div>
-  </div>
-  <div class="content">
-    <h3 id="problem">Problem</h3>
-<p>As data collection and aggregation grows in an organization, presenting and consuming that data can become a real challenge. A good foundation in visualization eases this burden. Using bar charts effectively can help with sw</p>
-
-<h3 id="actions">Actions</h3>
-<p>We will walk through an example of how to create a useful and beautiful barchart in R.</p>
-
-<h3 id="example">Example</h3>
-
-<p>In R, the library ggplot2 is your best friend when it comes to creatingstatic bar charts. You can create a simple one with the following code:</p>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
-
-ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span></code></pre></div>
-
-<p><img src="http://i.imgur.com/ZPrONaq.png" alt="image" /></p>
-
-<p>This bar chart is simple and effect but we can do better. We can start simple by adding titles.</p>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span> <span class="o">+</span>
-  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes MPG Dataset&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span></code></pre></div>
-
-<p><img src="http://i.imgur.com/56OPrfU.png" alt="image" /></p>
-
-<p>The background space in this chart isn’t really pleasing to the eyes. We can make a customize the chart and make it all grey for effect:</p>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>scales<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>grid<span class="p">)</span> 
-<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>extrafont<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>reshape<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>ggthemes<span class="p">)</span>
-
-blogData <span class="o">=</span> mpg
-
-palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
-color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
-
-ggplot<span class="p">(</span>mpg<span class="p">,</span> aes<span class="p">(</span><span class="kp">class</span><span class="p">,</span> fill <span class="o">=</span> <span class="kp">class</span><span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">()</span> <span class="o">+</span>
-  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes MPG Dataset&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span><span class="o">+</span>
-  theme_bw<span class="p">(</span>base_size<span class="o">=</span><span class="m">9</span><span class="p">)</span><span class="o">+</span>
-  theme<span class="p">(</span>panel.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
-  theme<span class="p">(</span>plot.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
-  theme<span class="p">(</span>panel.border<span class="o">=</span>element_rect<span class="p">(</span>color<span class="o">=</span>color.background<span class="p">))</span><span class="o">+</span>
-  theme<span class="p">(</span>legend.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">))</span></code></pre></div>
-
-<p><img src="https://i.imgur.com/dQ3YlQZ.png" alt="image" /></p>
-
-<p>A few more modifications can be made.</p>
-
-<ol>
-  <li>Sort by count</li>
-  <li>Flip the axis</li>
-  <li>Overlay the count</li>
-  <li>Change the font of the chart</li>
-  <li>Change the opacity of the bars</li>
-  <li>Remove the legend (doesn’t add any value)</li>
-  <li>Some other aesthetic fixes</li>
-</ol>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>scales<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>grid<span class="p">)</span> 
-<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>extrafont<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>reshape<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>ggthemes<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
-
-blogData <span class="o">=</span> mpg
-
-palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
-color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
-
-newMPG <span class="o">&lt;-</span> group_by<span class="p">(</span>mpg<span class="p">,</span><span class="kp">class</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  summarise<span class="p">(</span>total <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span>
-  arrange<span class="p">(</span>desc<span class="p">(</span>total<span class="p">))</span>
-
-ggplot<span class="p">(</span>newMPG<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>reorder<span class="p">(</span><span class="kp">class</span><span class="p">,</span> <span class="o">+</span>total<span class="p">),</span> total<span class="p">))</span> <span class="o">+</span> coord_flip<span class="p">()</span><span class="o">+</span> geom_bar<span class="p">(</span>fill <span class="o">=</span> <span class="s">&quot;#6f00ff&quot;</span><span class="p">,</span> stat<span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span> <span class="o">+</span>
-  labs<span class="p">(</span>title <span class="o">=</span> <span class="s">&quot;Count of Car Classes&quot;</span><span class="p">,</span> x <span class="o">=</span> <span class="s">&quot;Car Class&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;Count&quot;</span><span class="p">)</span><span class="o">+</span>
-  geom_text<span class="p">(</span>aes<span class="p">(</span>y<span class="o">=</span>total <span class="o">-</span> <span class="m">1</span><span class="p">,</span> label<span class="o">=</span>total<span class="p">),</span> position <span class="o">=</span> position_dodge<span class="p">(</span><span class="m">.09</span><span class="p">),</span> vjust<span class="o">=</span> <span class="m">.5</span><span class="p">,</span> size <span class="o">=</span> <span class="m">3</span><span class="p">,</span> hjust <span class="o">=</span> <span class="m">1.3</span><span class="p">,</span> fontface<span class="o">=</span> <span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">)</span><span class="o">+</span>
-  my_theme<span class="p">()</span>
-  
-my_theme <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>
-  
-  <span class="c1"># Generate the colors for the chart procedurally with RColorBrewer</span>
-  palette <span class="o">&lt;-</span> brewer.pal<span class="p">(</span><span class="s">&quot;Greys&quot;</span><span class="p">,</span> n<span class="o">=</span><span class="m">9</span><span class="p">)</span>
-  color.background <span class="o">=</span> palette<span class="p">[</span><span class="m">2</span><span class="p">]</span>
-  color.grid.major <span class="o">=</span> palette<span class="p">[</span><span class="m">3</span><span class="p">]</span>
-  color.axis.text <span class="o">=</span> palette<span class="p">[</span><span class="m">6</span><span class="p">]</span>
-  color.axis.title <span class="o">=</span> palette<span class="p">[</span><span class="m">7</span><span class="p">]</span>
-  color.title <span class="o">=</span> palette<span class="p">[</span><span class="m">9</span><span class="p">]</span>
-  
-  <span class="c1"># Begin construction of chart</span>
-  theme_bw<span class="p">(</span>base_size<span class="o">=</span><span class="m">9</span><span class="p">)</span> <span class="o">+</span>
-    
-    <span class="c1"># Set the entire chart region to a light gray color</span>
-    theme<span class="p">(</span>panel.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>plot.background<span class="o">=</span>element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>panel.border<span class="o">=</span>element_rect<span class="p">(</span>color<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
-    
-    
-    <span class="c1"># Format the grid</span>
-    theme<span class="p">(</span>panel.grid.major<span class="o">=</span>element_line<span class="p">(</span>color<span class="o">=</span>color.grid.major<span class="p">,</span>size<span class="o">=</span><span class="m">.25</span><span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>panel.grid.minor<span class="o">=</span>element_blank<span class="p">())</span> <span class="o">+</span>
-    theme<span class="p">(</span>axis.ticks<span class="o">=</span>element_blank<span class="p">())</span> <span class="o">+</span>
-    
-    
-    <span class="c1"># Format the legend, but hide by default</span>
-    theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span> <span class="o">+</span>
-    theme<span class="p">(</span>legend.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>legend.text <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">7</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">))</span> <span class="o">+</span>
-    
-    
-    <span class="c1"># Set title and axis labels, and format these and tick marks</span>
-    theme<span class="p">(</span>plot.title<span class="o">=</span>element_text<span class="p">(</span>color<span class="o">=</span>color.title<span class="p">,</span> size<span class="o">=</span><span class="m">15</span><span class="p">,</span> vjust<span class="o">=</span><span class="m">1.25</span><span class="p">,</span>face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family<span class="o">=</span><span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>axis.text.x<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.text<span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>axis.text.y<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.text<span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>axis.title.x<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">,</span> vjust<span class="o">=</span><span class="m">0</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family<span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>axis.title.y<span class="o">=</span>element_text<span class="p">(</span>size<span class="o">=</span><span class="m">10</span><span class="p">,</span>color<span class="o">=</span>color.axis.title<span class="p">,</span> vjust<span class="o">=</span><span class="m">1.25</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span> 
-    theme<span class="p">(</span>strip.text.y <span class="o">=</span> element_text<span class="p">(</span>size <span class="o">=</span> <span class="m">10</span><span class="p">,</span> colour <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">,</span> family <span class="o">=</span> <span class="s">&quot;Hack&quot;</span><span class="p">))</span> <span class="o">+</span>
-    theme<span class="p">(</span>strip.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span>color.background<span class="p">,</span> color<span class="o">=</span>color.background<span class="p">,</span> size<span class="o">=</span><span class="m">1</span><span class="p">))</span> <span class="o">+</span>
-    
-    <span class="c1"># Plot margins</span>
-    theme<span class="p">(</span>plot.margin <span class="o">=</span> unit<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">0.3</span><span class="p">,</span> <span class="m">0.35</span><span class="p">),</span> <span class="s">&quot;cm&quot;</span><span class="p">))</span>
-<span class="p">}</span></code></pre></div>
-
-<p><img src="http://i.imgur.com/DOnynEA.png" alt="image" /></p>
-
-<p>Now we have a chart worth sharing.</p>
-
-<h3 id="references">References:</h3>
-
-<p><a href="http://docs.ggplot2.org/current/">ggplot2</a></p>
-
-<p><a href="http://minimaxir.com/2015/02/ggplot-tutorial/">Max Woolf</a></p>
-
-
-    <hr>
-  </div>
-
 
 <!-- Pagination links -->
 
@@ -608,6 +550,10 @@ my_theme <span class="o">&lt;-</span> <span class="kr">function</span><span clas
   
     
       <a href="/page5">5</a>
+    
+  
+    
+      <a href="/page6">6</a>
     
   
 
